@@ -1,4 +1,4 @@
-package org.example.gestion_ildeilc;
+package app.gestion_ildeilc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

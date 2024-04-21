@@ -1,8 +1,8 @@
-module org.example.gestion_ildeilc {
+module app.gestion_ildeilc {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens org.example.gestion_ildeilc to javafx.fxml;
-    exports org.example.gestion_ildeilc;
+    opens app.gestion_ildeilc to javafx.fxml;
+    exports app.gestion_ildeilc;
 }
