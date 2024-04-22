@@ -6,11 +6,14 @@
 
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="app.gestion_ildeilc.HelloController">
+      fx:controller="app.gestion_ildeilc.ViewController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
   </padding>
 
   <Label fx:id="welcomeText"/>
   <Button text="Hello!" onAction="#onHelloButtonClick"/>
+  <Button text="Commandes" onAction="#goToOrder"/>
+  <Button text="Bons de livraisons" onAction="#goToDeliveryNotes"/>
+  <Button text="Factures" onAction="#goToInvoice"/>
 </VBox>
