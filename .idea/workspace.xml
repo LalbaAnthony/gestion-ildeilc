@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/ViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/src/classes/Invoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/src/classes/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/src/classes/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_ILDEILC_old/src/classes/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +59,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projects/gestion_ILDEILC/src/main/resources/app/gestion_ildeilc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +70,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\gestion_ILDEILC\src\main\resources\app\gestion_ildeilc" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.gestion_ildeilc.MainApplication" />
