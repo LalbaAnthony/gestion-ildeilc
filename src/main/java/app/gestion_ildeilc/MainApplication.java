@@ -21,10 +21,6 @@ public class MainApplication extends Application {
         stage.show();
     }
 
-    public void goToOrders() {
-        System.out.println("The color you have chosen is not in the list");
-    }
-
     public static void main(String[] args) {
         launch();
     }
