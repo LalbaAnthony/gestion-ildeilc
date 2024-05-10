@@ -8,14 +8,4 @@ public class HomeViewController {
     protected void goToOrder() {
 
     }
-
-    @FXML
-    protected void goToDeliveryNotes() {
-
-    }
-
-    @FXML
-    protected void goToInvoice() {
-
-    }
 }
