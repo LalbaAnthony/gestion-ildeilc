@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
-    public int height = 480;
-    public int width = 640;
+    public static int height = 480;
+    public static int width = 640;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -20,6 +20,8 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+
 
     public static void main(String[] args) {
         launch();
