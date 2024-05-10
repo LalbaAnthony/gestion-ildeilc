@@ -12,18 +12,4 @@ public class HelloViewController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    @FXML
-    protected void goToOrder() {
-        welcomeText.setText("");
-    }
-
-    @FXML
-    protected void goToDeliveryNotes() {
-        welcomeText.setText("");
-    }
-
-    @FXML
-    protected void goToInvoice() {
-        welcomeText.setText("");
-    }
 }
