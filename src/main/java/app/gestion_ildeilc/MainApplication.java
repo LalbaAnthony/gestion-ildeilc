@@ -26,9 +26,9 @@ public class MainApplication extends Application {
         Button btnInvoices = new Button("Invoices");
 
         // Add action to change the view using the button
-        btnOrders.setOnAction(e -> switchView("hello-view.fxml"));
-        btnDeliveryNotes.setOnAction(e -> switchView("hello-view.fxml"));
-        btnInvoices.setOnAction(e -> switchView("hello-view.fxml"));
+        btnOrders.setOnAction(e -> switchView("orders-view.fxml"));
+        btnDeliveryNotes.setOnAction(e -> switchView("delivery-notes-view.fxml"));
+        btnInvoices.setOnAction(e -> switchView("invoices-view.fxml"));
 
         // Create a VBox container for the header buttons
         VBox topMenu = new VBox();

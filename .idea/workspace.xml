@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="" />
+    <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/InvoicesViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/OrdersViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoices-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/HelloViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/DeliveryNotesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +112,7 @@
       <updated>1713730313988</updated>
       <workItem from="1713730315142" duration="55000" />
       <workItem from="1713730430413" duration="1349000" />
-      <workItem from="1715367445426" duration="2097000" />
+      <workItem from="1715367445426" duration="2682000" />
     </task>
     <servers />
   </component>
