@@ -1,5 +1,7 @@
 - [ ] Views
 - [ ] Controllers
+- [ ] Models
 - [ ] Java doc
 - [ ] Units tests
 - [ ] Delete template files
+- [ ] Make the wholes class diagram of each classes

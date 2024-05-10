@@ -10,5 +10,4 @@
 
     <Label text="Bienvenue dans l'outils de gestion de ILDEILC"/>
 
-    <Button fx:id="ordersBtn" text="Commandes" onAction="#goToOrders"/>
 </VBox>
