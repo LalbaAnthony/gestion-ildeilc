@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
-    private BorderPane root; // Garder comme champ pour accéder dans différentes méthodes
+    private BorderPane root; // Keep as a field for access in different methods
 
     public static int height = 480;
     public static int width = 640;
@@ -20,37 +20,41 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        // Créez des boutons que vous souhaitez placer dans l'en-tête
-        Button button1 = new Button("Button 1");
+        // Create buttons that you want to place in the header
+        Button btnOrders = new Button("Orders");
+        Button btnDeliveryNotes = new Button("Delivery notes");
+        Button btnInvoices = new Button("Invoices");
 
-        // Ajout d'action pour changer la vue en utilisant les boutons
-        button1.setOnAction(e -> switchView("hello-view.fxml"));
+        // Add action to change the view using the button
+        btnOrders.setOnAction(e -> switchView("hello-view.fxml"));
+        btnDeliveryNotes.setOnAction(e -> switchView("hello-view.fxml"));
+        btnInvoices.setOnAction(e -> switchView("hello-view.fxml"));
 
-        // Créez un conteneur VBox pour les boutons de l'en-tête
+        // Create a VBox container for the header buttons
         VBox topMenu = new VBox();
-        topMenu.getChildren().addAll(button1);
+        topMenu.getChildren().addAll(btnOrders, btnDeliveryNotes, btnInvoices);
 
-        // Créez un conteneur BorderPane pour l'en-tête
+        // Create a BorderPane container for the header
         BorderPane header = new BorderPane();
         header.setTop(topMenu);
 
-        // Initialisation du BorderPane racine
+        // Initialize the main BorderPane
         root = new BorderPane();
-        root.setTop(header); // Fixer l'en-tête
+        root.setTop(header); // Set the header
 
-        // Charger la vue initiale
+        // Load the initial view
         switchView("home-view.fxml");
 
-        // Créez une scène avec le conteneur BorderPane principal
+        // Create a scene with the main BorderPane container
         Scene scene = new Scene(root, width, height);
 
-        // Définissez la scène et affichez la fenêtre
+        // Set the scene and display the window
         stage.setTitle("Gestion ILDEILC");
         stage.setScene(scene);
         stage.show();
     }
 
-    // Méthode pour changer la vue dans la partie centrale de BorderPane
+    // Method to change the view in the central part of BorderPane
     private void switchView(String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
