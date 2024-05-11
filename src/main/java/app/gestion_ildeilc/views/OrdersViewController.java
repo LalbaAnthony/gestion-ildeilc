@@ -1,4 +1,4 @@
-package app.gestion_ildeilc;
+package app.gestion_ildeilc.views;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
