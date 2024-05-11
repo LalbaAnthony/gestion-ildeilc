@@ -4,9 +4,10 @@ module app.gestion_ildeilc {
 
 
     opens app.gestion_ildeilc to javafx.fxml;
+    exports app.gestion_ildeilc;
+
     opens app.gestion_ildeilc.items to javafx.base;
 
-    exports app.gestion_ildeilc;
-    exports app.gestion_ildeilc.views;
     opens app.gestion_ildeilc.views to javafx.fxml;
+    exports app.gestion_ildeilc.views;
 }
