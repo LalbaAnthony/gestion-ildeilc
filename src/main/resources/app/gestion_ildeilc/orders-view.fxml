@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
@@ -11,6 +13,12 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label text="WIP - Orders"/>
+    <Label text="Orders"/>
+
+    <!-- Define TableView with two columns: Order ID and Customer Name -->
+    <TableView fx:id="ordersTable">
+        <columns>
+        </columns>
+    </TableView>
 
 </VBox>
