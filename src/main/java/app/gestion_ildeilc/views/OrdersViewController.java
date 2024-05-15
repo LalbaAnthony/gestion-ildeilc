@@ -8,6 +8,7 @@ import app.gestion_ildeilc.items.Order;
 
 // Importing utils
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class OrdersViewController {
 
@@ -22,11 +23,18 @@ public class OrdersViewController {
         TableColumn<Order, String> descriptionCol = new TableColumn<>("Description");
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        TableColumn<Order, String> totalCol = new TableColumn<>("Total");
+        TableColumn<Order, Integer> totalCol = new TableColumn<>("Total");
         totalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
 
+
+        // Formater la date
+        // String formattedDate = currentDate.format(new DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+        TableColumn<Order, Integer> deliveryDateCol = new TableColumn<>("Delivery date");
+        deliveryDateCol.setCellValueFactory(new PropertyValueFactory<>("deliveryDate"));
+
         // Add columns to the table
-        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol);
+        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol);
 
         // Populate table with sample data (replace with the actual data)
         ordersTable.getItems().addAll(
