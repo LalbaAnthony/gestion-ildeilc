@@ -12,7 +12,7 @@ public class OrdersViewController {
     private TableView<Order> ordersTable;
 
     public void initialize() {
-        // Initialize columns with properties of your Order class
+        // Initialize columns with properties of the Order class
         TableColumn<Order, String> orderIdCol = new TableColumn<>("Order ID");
         orderIdCol.setCellValueFactory(new PropertyValueFactory<>("orderId"));
 
@@ -22,7 +22,7 @@ public class OrdersViewController {
         // Add columns to the table
         ordersTable.getColumns().addAll(orderIdCol, customerNameCol);
 
-        // Populate table with sample data (replace with your actual data)
+        // Populate table with sample data (replace with the actual data)
         ordersTable.getItems().addAll(
                 new Order("1", "John Doe"),
                 new Order("2", "Jane Smith")
