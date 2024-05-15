@@ -1,28 +1,49 @@
 package app.gestion_ildeilc.items;
 
-public class Order {
-    private String orderId;
-    private String customerName;
+import java.time.LocalDate;
 
-    public Order(String orderId, String customerName) {
-        this.orderId = orderId;
-        this.customerName = customerName;
+public class Order extends Transaction {
+
+    private String status;
+    private LocalDate deliveryDate;
+
+    public Order(int id, int customerId, String description, double total, LocalDate deliveryDate) {
+        super(id, customerId, description, total);
+        this.status = "Pending";
+        this.deliveryDate = deliveryDate;
     }
 
-    // Getters and setters
-    public String getOrderId() {
-        return orderId;
+    // ================ Getters ================
+
+    public String getStatus() {
+        return status;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    // ================ Setters ================
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    // ================ Methods ================
+
+    public void printOrder() {
+        System.out.println("===================================");
+        System.out.println("Order ID: " + getId());
+        System.out.println("Customer ID: " + getCustomerId());
+        System.out.println("Description: " + getDescription());
+        System.out.println("Total: " + getTotal());
+        System.out.println("Status: " + status);
+        System.out.println("Creation Date: " + getCreationDate());
+        System.out.println("Delivery Date: " + deliveryDate);
+        System.out.println("===================================");
     }
 }
