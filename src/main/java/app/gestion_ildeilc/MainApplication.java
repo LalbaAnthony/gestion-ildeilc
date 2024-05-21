@@ -8,8 +8,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainApplication extends Application {
 
@@ -62,6 +64,12 @@ public class MainApplication extends Application {
 
         // Set the scene and display the window
         stage.setTitle("Gestion ILDEILC");
+
+        // Load and set the icon, the image is meant to be replaced in the future or in a real use case
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/assets/logo_gestion_ILDEILC_transp.png")));
+        stage.getIcons().add(icon);
+
+        // Set and show scene
         stage.setScene(scene);
         stage.show();
     }
