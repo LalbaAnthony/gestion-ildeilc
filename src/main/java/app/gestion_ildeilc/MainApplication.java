@@ -40,7 +40,7 @@ public class MainApplication extends Application {
         btnOrders.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
         btnDeliveryNotes.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
         btnInvoices.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnClose.setStyle("-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"); // Styling for close button
+        btnClose.setStyle("-fx-background-color: #FF7900; -fx-text-fill: white; -fx-font-weight: bold;"); // Styling for close button
 
         // Create a HBox container for the header buttons
         HBox topMenu = new HBox(10); // Set a 10 spacing between buttons | HBox -> Horizontal flex, VBox Vertical flex
