@@ -24,7 +24,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        // Create buttons that you want to place in the header
+        // Create the header buttons
         Button btnOrders = new Button("Orders");
         Button btnDeliveryNotes = new Button("Delivery notes");
         Button btnInvoices = new Button("Invoices");
@@ -38,9 +38,9 @@ public class MainApplication extends Application {
         btnClose.setOnAction(e -> stage.close()); // Action to close the app when clicked
 
         // Apply CSS styling to the buttons
-        btnOrders.setStyle("-fx-background-color: #008CBA; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnDeliveryNotes.setStyle("-fx-background-color: #008CBA; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnInvoices.setStyle("-fx-background-color: #008CBA; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnOrders.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnDeliveryNotes.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
+        btnInvoices.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
         btnClose.setStyle("-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"); // Styling for close button
 
         // Create a HBox container for the header buttons

@@ -15,7 +15,7 @@
 
     <Label text="Orders"/>
 
-    <!-- Define TableView with two columns: Order ID and Customer Name -->
+    <!-- Define TableView -->
     <TableView fx:id="ordersTable">
         <columns>
         </columns>
