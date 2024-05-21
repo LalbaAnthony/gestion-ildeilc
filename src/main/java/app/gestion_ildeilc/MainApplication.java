@@ -34,7 +34,6 @@ public class MainApplication extends Application {
         btnOrders.setOnAction(e -> switchView("orders-view.fxml"));
         btnDeliveryNotes.setOnAction(e -> switchView("delivery-notes-view.fxml"));
         btnInvoices.setOnAction(e -> switchView("invoices-view.fxml"));
-
         btnClose.setOnAction(e -> stage.close()); // Action to close the app when clicked
 
         // Apply CSS styling to the buttons

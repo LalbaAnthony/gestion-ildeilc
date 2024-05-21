@@ -21,13 +21,15 @@ public class OrdersViewController {
     private TableView<Order> ordersTable;
 
     public void initialize() {
-        // Initialize columns with properties of the Order class
+        // ID column
         TableColumn<Order, String> orderIdCol = new TableColumn<>("Order ID");
         orderIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
 
+        // Description column
         TableColumn<Order, String> descriptionCol = new TableColumn<>("Description");
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
+        // Total column
         TableColumn<Order, Double> totalCol = new TableColumn<>("Total");
         totalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
         totalCol.setCellFactory(column -> new TableCell<Order, Double>() {
@@ -44,10 +46,11 @@ public class OrdersViewController {
             }
         });
 
+        // Delivery date column
         TableColumn<Order, LocalDate> deliveryDateCol = new TableColumn<>("Delivery date");
         deliveryDateCol.setCellValueFactory(new PropertyValueFactory<>("deliveryDate"));
 
-        // Set custom cell factory for date formatting
+        // Date format for the delivery date column
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         deliveryDateCol.setCellFactory(column -> new TextFieldTableCell<>(new StringConverter<LocalDate>() {
             @Override
@@ -61,17 +64,15 @@ public class OrdersViewController {
             }
         }));
 
-        // Add columns to the table
-        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol);
-
-        // Add customer name column
+        // Customer name column
         TableColumn<Order, String> customerNameCol = new TableColumn<>("Customer Name");
         customerNameCol.setCellValueFactory(cellData -> {
             Customer customer = cellData.getValue().getCustomer();
             return new javafx.beans.property.SimpleStringProperty(customer.getNiceName());
         });
 
-        ordersTable.getColumns().add(customerNameCol);
+        // Add all columns to the table
+        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol);
 
         // Populate table with sample data
         Customer customer1 = new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem adress");
