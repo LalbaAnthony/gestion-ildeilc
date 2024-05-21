@@ -5,15 +5,16 @@ import java.time.LocalDate;
 public class Customer {
 
     private final int id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String address;
     private final LocalDate creationDate;
 
-    public Customer(int id, String name, String email, String address)
-    {
+    public Customer(int id, String firstName, String lastName, String email, String address) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.creationDate = LocalDate.now();
@@ -25,8 +26,12 @@ public class Customer {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getEmail() {
@@ -43,8 +48,12 @@ public class Customer {
 
     // ================ Setters ================
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {
@@ -57,14 +66,18 @@ public class Customer {
 
     // ================ Methods ================
 
+    public String getNiceName() {
+        return firstName + " " + lastName;
+    }
+
     public void printCustomer() {
         System.out.println("===================================");
         System.out.println("Customer ID: " + getId());
-        System.out.println("Name: " + getName());
+        System.out.println("Last Name: " + getLastName());
+        System.out.println("First Name: " + getFirstName());
         System.out.println("Email: " + getEmail());
         System.out.println("Address: " + getAddress());
         System.out.println("Creation Date: " + getCreationDate());
         System.out.println("===================================");
     }
 }
-

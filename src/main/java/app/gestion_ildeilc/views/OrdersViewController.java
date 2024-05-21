@@ -8,6 +8,7 @@ import javafx.util.converter.NumberStringConverter;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.StringConverter;
+import app.gestion_ildeilc.items.Customer;
 import app.gestion_ildeilc.items.Order;
 
 // Importing utils
@@ -63,7 +64,20 @@ public class OrdersViewController {
         // Add columns to the table
         ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol);
 
-        // Populate table with sample data (replace with the actual data)
-        ordersTable.getItems().addAll(new Order(1, 1, "Order 1", 100.1, LocalDate.of(2021, 10, 1)), new Order(2, 2, "Order 2", 200.0, LocalDate.of(2021, 10, 2)));
+        // Add customer name column
+        TableColumn<Order, String> customerNameCol = new TableColumn<>("Customer Name");
+        customerNameCol.setCellValueFactory(cellData -> {
+            Customer customer = cellData.getValue().getCustomer();
+            return new javafx.beans.property.SimpleStringProperty(customer.getNiceName());
+        });
+
+        ordersTable.getColumns().add(customerNameCol);
+
+        // Populate table with sample data
+        Customer customer1 = new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem adress");
+        ordersTable.getItems().addAll(
+                new Order(1, customer1, "Order 1", 100.1, LocalDate.of(2021, 10, 1)),
+                new Order(2, customer1, "Order 2", 200.0, LocalDate.of(2021, 10, 2))
+        );
     }
 }

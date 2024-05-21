@@ -7,8 +7,8 @@ public class Order extends Transaction {
     private String status;
     private LocalDate deliveryDate;
 
-    public Order(int id, int customerId, String description, double total, LocalDate deliveryDate) {
-        super(id, customerId, description, total);
+    public Order(int id, Customer customer, String description, double total, LocalDate deliveryDate) {
+        super(id, customer, description, total);
         this.status = "Pending";
         this.deliveryDate = deliveryDate;
     }
@@ -38,7 +38,6 @@ public class Order extends Transaction {
     public void printOrder() {
         System.out.println("===================================");
         System.out.println("Order ID: " + getId());
-        System.out.println("Customer ID: " + getCustomerId());
         System.out.println("Description: " + getDescription());
         System.out.println("Total: " + getTotal());
         System.out.println("Status: " + status);
