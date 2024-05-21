@@ -3,11 +3,11 @@ package app.gestion_ildeilc.items;
 import java.time.LocalDate;
 
 public class Transaction {
-    private int id;
+    private final int id;
     private int customerId;
     private String description;
     private double total;
-    private LocalDate creationDate;
+    private final LocalDate creationDate;
 
     public Transaction(int id, int customerId, String description, double total) {
         this.id = id;
@@ -41,10 +41,6 @@ public class Transaction {
 
     // ================ Setters ================
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
@@ -57,7 +53,4 @@ public class Transaction {
         this.total = total;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
-        this.creationDate = creationDate;
-    }
 }
