@@ -1,7 +1,8 @@
+- [X] Delete template files
 - [ ] Views
+    - [ ] Center data in cols
 - [ ] Controllers
 - [ ] Models
 - [ ] Java doc
 - [ ] Units tests
-- [ ] Delete template files
-- [ ] Make the wholes class diagram of each classes
+- [ ] Make classes diagrams
