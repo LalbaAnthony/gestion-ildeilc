@@ -12,22 +12,19 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
-import app.gestion_ildeilc.items.Customer;
-import app.gestion_ildeilc.items.Order;
-
-// Importing utils
+import app.gestion_ildeilc.models.Customer;
+import app.gestion_ildeilc.models.Order;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import app.gestion_ildeilc.controllers.OrderController;
 
 public class OrdersViewController {
 
+
     // Orders sample data
-    public static ObservableList<Order> ordersData = FXCollections.observableArrayList(
-            new Order(1, new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 1", 100.1, LocalDate.of(2021, 10, 1)),
-            new Order(2, new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 2", 200.0, LocalDate.of(2021, 10, 2))
-    );
+    public static ObservableList<Order> ordersArray = FXCollections.observableArrayList(OrderController.orders);
 
     @FXML
     private TableView<Order> ordersTable;
@@ -93,7 +90,7 @@ public class OrdersViewController {
                 deleteButton.setOnAction(event -> {
                     Order order = getTableView().getItems().get(getIndex());
                     getTableView().getItems().remove(order);
-                    ordersData.remove(order); // Supprimer également l'ordre de ordersData
+                    OrderController.deleteOrder(order);
                 });
             }
 
@@ -117,7 +114,7 @@ public class OrdersViewController {
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // Populate table with sample data
-        ordersTable.setItems(ordersData);
+        ordersTable.setItems(ordersArray);
     }
 }
 

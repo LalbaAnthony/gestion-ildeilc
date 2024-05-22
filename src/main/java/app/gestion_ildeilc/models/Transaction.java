@@ -1,4 +1,4 @@
-package app.gestion_ildeilc.items;
+package app.gestion_ildeilc.models;
 
 import java.time.LocalDate;
 
