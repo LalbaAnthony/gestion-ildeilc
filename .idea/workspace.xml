@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/items/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/items/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/items/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/items/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrdersViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +117,7 @@
       <workItem from="1713730430413" duration="1349000" />
       <workItem from="1715367445426" duration="2682000" />
       <workItem from="1715597191411" duration="2257000" />
-      <workItem from="1716293077147" duration="15680000" />
+      <workItem from="1716293077147" duration="16710000" />
     </task>
     <servers />
   </component>

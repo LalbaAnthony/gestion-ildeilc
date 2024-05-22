@@ -22,10 +22,6 @@ import app.gestion_ildeilc.controllers.OrderController;
 
 public class OrdersViewController {
 
-
-    // Orders sample data
-    public static ObservableList<Order> ordersArray = FXCollections.observableArrayList(OrderController.orders);
-
     @FXML
     private TableView<Order> ordersTable;
 
@@ -114,7 +110,7 @@ public class OrdersViewController {
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // Populate table with sample data
-        ordersTable.setItems(ordersArray);
+        ordersTable.setItems(FXCollections.observableArrayList(OrderController.orders));
     }
 }
 

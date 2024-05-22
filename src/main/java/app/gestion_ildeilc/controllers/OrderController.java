@@ -52,7 +52,6 @@ public class OrderController {
     }
 
     // Delete order
-    // Delete order
     public static boolean deleteOrder(Order order) {
         for (int i = 0; i < orders.length; i++) {
             if (orders[i].getId() == order.getId()) {
