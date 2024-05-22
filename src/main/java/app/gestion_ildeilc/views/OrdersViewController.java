@@ -18,14 +18,16 @@ import app.gestion_ildeilc.items.Order;
 // Importing utils
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class OrdersViewController {
 
     // Orders sample data
-    public static Order[] orders = {
+    public static ObservableList<Order> ordersData = FXCollections.observableArrayList(
             new Order(1, new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 1", 100.1, LocalDate.of(2021, 10, 1)),
             new Order(2, new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 2", 200.0, LocalDate.of(2021, 10, 2))
-    };
+    );
 
     @FXML
     private TableView<Order> ordersTable;
@@ -91,6 +93,7 @@ public class OrdersViewController {
                 deleteButton.setOnAction(event -> {
                     Order order = getTableView().getItems().get(getIndex());
                     getTableView().getItems().remove(order);
+                    ordersData.remove(order); // Supprimer également l'ordre de ordersData
                 });
             }
 
@@ -110,7 +113,11 @@ public class OrdersViewController {
         // Add all columns to the table
         ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol, deleteCol);
 
+        // Set autoresize property
+        ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
         // Populate table with sample data
-        ordersTable.getItems().addAll(orders);
+        ordersTable.setItems(ordersData);
     }
 }
+
