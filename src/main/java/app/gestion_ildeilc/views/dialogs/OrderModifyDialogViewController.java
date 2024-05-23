@@ -7,6 +7,8 @@ import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import app.gestion_ildeilc.models.Order;
 import javafx.collections.FXCollections;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import app.gestion_ildeilc.models.Customer;
 import javafx.util.StringConverter;
 
@@ -28,7 +30,7 @@ public class OrderModifyDialogViewController {
     private DatePicker deliveryDatePicker;
 
     @FXML
-    private TextField totalField;
+    private Spinner<Double> totalSpinner;
 
     private Stage dialogStage;
     private Order order;
@@ -37,6 +39,10 @@ public class OrderModifyDialogViewController {
     @FXML
     private void initialize() {
         orderStatusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
+
+        // Initialize the Spinner for totalField
+        SpinnerValueFactory<Double> valueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
+        totalSpinner.setValueFactory(valueFactory);
 
         // Configuration du StringConverter pour afficher les noms des clients
         customerComboBox.setConverter(new StringConverter<>() {
@@ -72,7 +78,7 @@ public class OrderModifyDialogViewController {
         orderStatusComboBox.setValue(order.getStatus());
         customerComboBox.setValue(order.getCustomer());
         deliveryDatePicker.setValue(order.getDeliveryDate());
-        totalField.setText(String.valueOf(order.getTotal()));
+        totalSpinner.getValueFactory().setValue(order.getTotal());
     }
 
     public boolean isSaveClicked() {
@@ -87,7 +93,7 @@ public class OrderModifyDialogViewController {
             order.setStatus(orderStatusComboBox.getValue());
             order.setCustomer(customerComboBox.getValue());
             order.setDeliveryDate(deliveryDatePicker.getValue());
-            order.setTotal(Double.parseDouble(totalField.getText()));
+            order.setTotal(totalSpinner.getValue());
 
             saveClicked = true;
             dialogStage.close();

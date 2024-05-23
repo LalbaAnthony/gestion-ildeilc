@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/DeliveryNotesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryNotesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/HomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/InvoicesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/InvoicesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrderModifyDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoices-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoices-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +121,7 @@
       <workItem from="1715367445426" duration="2682000" />
       <workItem from="1715597191411" duration="2257000" />
       <workItem from="1716293077147" duration="18099000" />
-      <workItem from="1716444927481" duration="10221000" />
+      <workItem from="1716444927481" duration="14349000" />
     </task>
     <servers />
   </component>

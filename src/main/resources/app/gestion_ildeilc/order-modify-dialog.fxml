@@ -37,7 +37,7 @@
         <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
         <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <TextField fx:id="totalField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Spinner fx:id="totalSpinner" GridPane.rowIndex="5" GridPane.columnIndex="1"/>  <!-- Use Spinner here -->
     </GridPane>
     <HBox spacing="10" alignment="CENTER_RIGHT">
         <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;"

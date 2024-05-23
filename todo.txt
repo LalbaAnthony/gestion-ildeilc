@@ -3,9 +3,11 @@
     - [X] Order: add children items modif
     - [X] Order: add id
     - [X] Fix visuals issues dialog
+    - [X] Change size of dialog and make an extend
     - [ ] Clean the order code before adding new shit
+    - [ ] Make ID a string
+    - [ ] Use a spinner for total
     - [ ] Center data in cols
-    - [ ] Change size of dialog and make an extend
     - [ ] Duplicate order
     - [ ] Replace all client in order modification field by actual data
 - [ ] Controllers
