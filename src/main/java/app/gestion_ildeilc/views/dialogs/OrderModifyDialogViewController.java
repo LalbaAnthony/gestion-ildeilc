@@ -61,8 +61,8 @@ public class OrderModifyDialogViewController {
         });
 
         customerComboBox.setItems(FXCollections.observableArrayList(
-                new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"),
-                new Customer(1, "John 2", "Doe", "tets@gmail.com", "Lorem address")
+                new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"),
+                new Customer("1", "John 2", "Doe", "tets@gmail.com", "Lorem address")
         ));
     }
 

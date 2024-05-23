@@ -7,7 +7,7 @@ public class Order extends Transaction {
     private String status;
     private LocalDate deliveryDate;
 
-    public Order(int id, Customer customer, String description, double total, LocalDate deliveryDate) {
+    public Order(String id, Customer customer, String description, double total, LocalDate deliveryDate) {
         super(id, customer, description, total);
         this.status = "Pending";
         this.deliveryDate = deliveryDate;

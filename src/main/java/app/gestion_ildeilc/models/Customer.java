@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 public class Customer {
 
-    private final int id;
+    private final String id;
     private String firstName;
     private String lastName;
     private String email;
     private String address;
     private final LocalDate creationDate;
 
-    public Customer(int id, String firstName, String lastName, String email, String address) {
+    public Customer(String id, String firstName, String lastName, String email, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,7 +22,7 @@ public class Customer {
 
     // ================ Getters ================
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

@@ -3,13 +3,13 @@ package app.gestion_ildeilc.models;
 import java.time.LocalDate;
 
 public class Transaction {
-    private final int id;
+    private final String id;
     private String description;
     private double total;
     private Customer customer;
     private final LocalDate creationDate;
 
-    public Transaction(int id, Customer customer, String description, double total) {
+    public Transaction(String id, Customer customer, String description, double total) {
         this.id = id;
         this.customer = customer;
         this.description = description;
@@ -19,7 +19,7 @@ public class Transaction {
 
     // ================ Getters ================
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
