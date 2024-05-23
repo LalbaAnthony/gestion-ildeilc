@@ -3,6 +3,7 @@ package app.gestion_ildeilc.controllers;
 import app.gestion_ildeilc.models.Order;
 import app.gestion_ildeilc.models.Customer;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class OrderController {
 
@@ -20,7 +21,7 @@ public class OrderController {
     // Get order by id
     public static Order getOrderById(String id) {
         for (Order order : orders) {
-            if (order.getId() == id) {
+            if (Objects.equals(order.getId(), id)) {
                 return order;
             }
         }
@@ -54,7 +55,7 @@ public class OrderController {
     // Delete order
     public static boolean deleteOrder(Order order) {
         for (int i = 0; i < orders.length; i++) {
-            if (orders[i].getId() == order.getId()) {
+            if (Objects.equals(orders[i].getId(), order.getId())) {
                 Order[] newOrders = new Order[orders.length - 1];
                 System.arraycopy(orders, 0, newOrders, 0, i);
                 System.arraycopy(orders, i + 1, newOrders, i, orders.length - i - 1);

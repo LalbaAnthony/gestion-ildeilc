@@ -1,12 +1,12 @@
 - [X] Delete template files
 - [ ] Views
-    - [X] Order: add children items modif
+    - [X] Order: add children items modification
     - [X] Order: add id
     - [X] Fix visuals issues dialog
-    - [X] Change size of dialog and make an extend
+    - [X] Change size of dialog and make an extends
     - [ ] Clean the order code before adding new shit
-    - [ ] Make ID a string
-    - [ ] Use a spinner for total
+    - [X] Make ID a string
+    - [X] Use a spinner for total
     - [ ] Center data in cols
     - [ ] Duplicate order
     - [ ] Replace all client in order modification field by actual data
@@ -14,6 +14,7 @@
 - [ ] Models
 - [ ] Java doc
 - [ ] Units tests
-- [ ] Make classes diagrams
+- [ ] Look for any warning in the code
+- [ ] Check for classes diagrams
 - [ ] Merge branch dev & main
 

@@ -8,6 +8,7 @@
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="app.gestion_ildeilc.views.pages.HomeViewController">
 
-    <Label text="Bienvenue dans l'outils de gestion de ILDEILC"/>
+    <Label text="Welcome to ILDEILC management tools" style="-fx-font-size: 24px;"/>
+    <Label text="Made by Anthony Lalba with 💖" style="-fx-font-size: 12px;"/>
 
 </VBox>
