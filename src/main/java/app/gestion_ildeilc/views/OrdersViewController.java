@@ -12,13 +12,19 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import app.gestion_ildeilc.models.Customer;
 import app.gestion_ildeilc.models.Order;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import app.gestion_ildeilc.controllers.OrderController;
+import java.net.URL;
 
 public class OrdersViewController {
 
@@ -76,10 +82,34 @@ public class OrdersViewController {
             return new SimpleStringProperty(customer.getNiceName());
         });
 
+        // Modify button column
+        TableColumn<Order, Void> modifyCol = new TableColumn<>(" ");
+        modifyCol.setCellFactory(param -> new TableCell<Order, Void>() {
+            private final Button modifyButton = new Button("Modify");
+            {
+                modifyButton.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
+                modifyButton.setOnAction(event -> {
+                    Order order = getTableView().getItems().get(getIndex());
+                    showModifyOrderDialog(order);
+                });
+            }
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    HBox hBox = new HBox(modifyButton);
+                    hBox.setAlignment(Pos.CENTER);
+                    setGraphic(hBox);
+                }
+            }
+        });
+
         // Delete button column
         TableColumn<Order, Void> deleteCol = new TableColumn<>(" ");
         deleteCol.setCellFactory(param -> new TableCell<Order, Void>() {
-            private final Button deleteButton = new Button("Supprimer");
+            private final Button deleteButton = new Button("Delete");
 
             {
                 deleteButton.setStyle("-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;");
@@ -104,7 +134,7 @@ public class OrdersViewController {
         });
 
         // Add all columns to the table
-        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol, deleteCol);
+        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol, modifyCol, deleteCol);
 
         // Set autoresize property
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -112,5 +142,39 @@ public class OrdersViewController {
         // Populate table with sample data
         ordersTable.setItems(FXCollections.observableArrayList(OrderController.orders));
     }
+
+    private void showModifyOrderDialog(Order order) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            URL fxmlLocation = getClass().getResource("/app/gestion_ildeilc/order-modify.fxml");
+            if (fxmlLocation == null) {
+                System.out.println("FXML file not found!");
+                return;
+            }
+            loader.setLocation(fxmlLocation);
+            Parent page = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Modify Order");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(ordersTable.getScene().getWindow());
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            OrderModifyDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setOrder(order);
+
+            dialogStage.showAndWait();
+
+            if (controller.isSaveClicked()) {
+                ordersTable.refresh();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
