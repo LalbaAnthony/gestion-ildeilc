@@ -11,3 +11,5 @@
 - [ ] Java doc
 - [ ] Units tests
 - [ ] Make classes diagrams
+- [ ] Merge branch dev & main
+

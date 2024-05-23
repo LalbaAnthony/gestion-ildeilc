@@ -7,23 +7,29 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import app.gestion_ildeilc.models.Order;
-
-import java.time.LocalDate;
+import javafx.collections.FXCollections;
+import app.gestion_ildeilc.models.Customer;
+import javafx.util.StringConverter;
 
 public class OrderModifyDialogController {
+
+    @FXML
+    private TextField idField;
 
     @FXML
     private TextField descriptionField;
 
     @FXML
-    private TextField totalField;
+    private ComboBox<Customer> customerComboBox;
+
+    @FXML
+    private ComboBox<String> orderStatusComboBox;
 
     @FXML
     private DatePicker deliveryDatePicker;
 
     @FXML
-    private ComboBox<String> orderStatusComboBox;
-
+    private TextField totalField;
 
     private Stage dialogStage;
     private Order order;
@@ -32,6 +38,27 @@ public class OrderModifyDialogController {
     @FXML
     private void initialize() {
         orderStatusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
+
+        // Configuration du StringConverter pour afficher les noms des clients
+        customerComboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(Customer customer) {
+                return customer != null ? customer.getNiceName() : "";
+            }
+
+            @Override
+            public Customer fromString(String string) {
+                return customerComboBox.getItems().stream()
+                        .filter(customer -> customer.getNiceName().equals(string))
+                        .findFirst()
+                        .orElse(null);
+            }
+        });
+
+        customerComboBox.setItems(FXCollections.observableArrayList(
+                new Customer(1, "John", "Doe", "tets@gmail.com", "Lorem address"),
+                new Customer(1, "John 2", "Doe", "tets@gmail.com", "Lorem address")
+        ));
     }
 
     public void setDialogStage(Stage dialogStage) {
@@ -41,10 +68,12 @@ public class OrderModifyDialogController {
     public void setOrder(Order order) {
         this.order = order;
 
+        idField.setText(String.valueOf(order.getId()));
         descriptionField.setText(order.getDescription());
-        totalField.setText(String.valueOf(order.getTotal()));
-        deliveryDatePicker.setValue(order.getDeliveryDate());
         orderStatusComboBox.setValue(order.getStatus());
+        customerComboBox.setValue(order.getCustomer());
+        deliveryDatePicker.setValue(order.getDeliveryDate());
+        totalField.setText(String.valueOf(order.getTotal()));
     }
 
     public boolean isSaveClicked() {
@@ -54,10 +83,12 @@ public class OrderModifyDialogController {
     @FXML
     private void handleSave() {
         if (isInputValid()) {
+            // order.setId(idField.getText()); // No set ID cuz it cannot be changed
             order.setDescription(descriptionField.getText());
-            order.setTotal(Double.parseDouble(totalField.getText()));
-            order.setDeliveryDate(deliveryDatePicker.getValue());
             order.setStatus(orderStatusComboBox.getValue());
+            order.setCustomer(customerComboBox.getValue());
+            order.setDeliveryDate(deliveryDatePicker.getValue());
+            order.setTotal(Double.parseDouble(totalField.getText()));
 
             saveClicked = true;
             dialogStage.close();

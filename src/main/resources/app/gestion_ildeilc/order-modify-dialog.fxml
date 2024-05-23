@@ -13,17 +13,24 @@
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
-            <Label text="Description:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-            <TextField fx:id="descriptionField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
 
-            <Label text="Status:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-            <ComboBox fx:id="orderStatusComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="idField" disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1" />
 
-            <Label text="Delivery Date:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-            <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
 
-            <Label text="Total:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-            <TextField fx:id="totalField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            <Label text="Customer:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <ComboBox fx:id="customerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <ComboBox fx:id="orderStatusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Delivery Date:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+            <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <TextField fx:id="totalField" GridPane.rowIndex="5" GridPane.columnIndex="1" />
         </GridPane>
         <HBox spacing="10" alignment="CENTER_RIGHT">
             <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleCancel" />
