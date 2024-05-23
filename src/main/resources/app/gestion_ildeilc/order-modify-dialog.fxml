@@ -6,35 +6,44 @@
 <?import javafx.util.converter.LocalDateStringConverter?>
 <?import javafx.geometry.Insets?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gestion_ildeilc.views.OrderModifyDialogController">
-    <children>
-        <Label text="Modify Order" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-        <GridPane hgap="10" vgap="10">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="app.gestion_ildeilc.views.dialogs.OrderModifyDialogViewController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
-            <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-            <TextField fx:id="idField" disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Modify Order" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    </HBox>
 
-            <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-            <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
 
-            <Label text="Customer:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-            <ComboBox fx:id="customerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="idField" disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-            <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-            <ComboBox fx:id="orderStatusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-            <Label text="Delivery Date:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
-            <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        <Label text="Customer:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="customerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-            <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
-            <TextField fx:id="totalField" GridPane.rowIndex="5" GridPane.columnIndex="1" />
-        </GridPane>
-        <HBox spacing="10" alignment="CENTER_RIGHT">
-            <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleCancel" />
-            <Button text="Save" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleSave" />
-        </HBox>
-    </children>
+        <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="orderStatusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Delivery Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="totalField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;"
+                onAction="#handleCancel"/>
+        <Button text="Save" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                onAction="#handleSave"/>
+    </HBox>
+
 </VBox>

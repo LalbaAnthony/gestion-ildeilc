@@ -1,5 +1,6 @@
-package app.gestion_ildeilc.views;
+package app.gestion_ildeilc.views.pages;
 
+import app.gestion_ildeilc.views.dialogs.OrderModifyDialogViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
@@ -165,10 +166,10 @@ public class OrdersViewController {
             dialogStage.setTitle("Modify Order");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(ordersTable.getScene().getWindow());
-            Scene scene = new Scene(page);
+            Scene scene = new Scene(page, 360, 300);
             dialogStage.setScene(scene);
 
-            OrderModifyDialogController controller = loader.getController();
+            OrderModifyDialogViewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setOrder(order);
 

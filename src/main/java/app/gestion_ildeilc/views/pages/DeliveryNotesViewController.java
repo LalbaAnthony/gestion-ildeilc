@@ -1,4 +1,4 @@
-package app.gestion_ildeilc.views;
+package app.gestion_ildeilc.views.pages;
 
 public class DeliveryNotesViewController {
 

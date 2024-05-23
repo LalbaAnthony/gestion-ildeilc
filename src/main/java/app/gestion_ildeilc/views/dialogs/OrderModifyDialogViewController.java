@@ -1,7 +1,6 @@
-package app.gestion_ildeilc.views;
+package app.gestion_ildeilc.views.dialogs;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
@@ -11,7 +10,7 @@ import javafx.collections.FXCollections;
 import app.gestion_ildeilc.models.Customer;
 import javafx.util.StringConverter;
 
-public class OrderModifyDialogController {
+public class OrderModifyDialogViewController {
 
     @FXML
     private TextField idField;

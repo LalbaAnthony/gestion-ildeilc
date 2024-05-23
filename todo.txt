@@ -1,11 +1,13 @@
 - [X] Delete template files
 - [ ] Views
-    - [ ] Order: add children items modif
-    - [ ] Order: add id
-    - [ ] Duplicate order
+    - [X] Order: add children items modif
+    - [X] Order: add id
+    - [X] Fix visuals issues dialog
+    - [ ] Clean the order code before adding new shit
     - [ ] Center data in cols
     - [ ] Change size of dialog and make an extend
-    - [ ] Fix visuals issues dialog
+    - [ ] Duplicate order
+    - [ ] Replace all client in order modification field by actual data
 - [ ] Controllers
 - [ ] Models
 - [ ] Java doc

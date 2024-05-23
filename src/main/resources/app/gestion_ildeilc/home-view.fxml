@@ -6,7 +6,7 @@
 
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="app.gestion_ildeilc.views.HomeViewController">
+      fx:controller="app.gestion_ildeilc.views.pages.HomeViewController">
 
     <Label text="Bienvenue dans l'outils de gestion de ILDEILC"/>
 
