@@ -146,7 +146,7 @@ public class OrdersViewController {
     private void showModifyOrderDialog(Order order) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            URL fxmlLocation = getClass().getResource("/app/gestion_ildeilc/order-modify.fxml");
+            URL fxmlLocation = getClass().getResource("/app/gestion_ildeilc/order-modify-dialog.fxml");
             if (fxmlLocation == null) {
                 System.out.println("FXML file not found!");
                 return;

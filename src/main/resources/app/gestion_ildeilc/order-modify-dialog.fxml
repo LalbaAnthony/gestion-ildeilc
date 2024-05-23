@@ -23,8 +23,8 @@
             <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1" />
         </GridPane>
         <HBox spacing="10" alignment="CENTER_RIGHT">
-            <Button text="Cancel" onAction="#handleCancel" />
-            <Button text="Save" onAction="#handleSave" />
+            <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleCancel" />
+            <Button text="Save" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleSave" />
         </HBox>
     </children>
 </VBox>
