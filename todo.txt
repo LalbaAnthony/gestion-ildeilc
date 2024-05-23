@@ -1,6 +1,11 @@
 - [X] Delete template files
 - [ ] Views
+    - [ ] Order: add children items modif
+    - [ ] Order: add id
+    - [ ] Duplicate order
     - [ ] Center data in cols
+    - [ ] Change size of dialog and make an extend
+    - [ ] Fix visuals issues dialog
 - [ ] Controllers
 - [ ] Models
 - [ ] Java doc

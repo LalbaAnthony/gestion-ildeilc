@@ -82,6 +82,10 @@ public class OrdersViewController {
             return new SimpleStringProperty(customer.getNiceName());
         });
 
+        // Status column
+        TableColumn<Order, LocalDate> statusCol = new TableColumn<>("Status");
+        statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
+
         // Modify button column
         TableColumn<Order, Void> modifyCol = new TableColumn<>(" ");
         modifyCol.setCellFactory(param -> new TableCell<Order, Void>() {
@@ -134,7 +138,7 @@ public class OrdersViewController {
         });
 
         // Add all columns to the table
-        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol, modifyCol, deleteCol);
+        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, totalCol, deliveryDateCol, customerNameCol, statusCol, modifyCol, deleteCol);
 
         // Set autoresize property
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);

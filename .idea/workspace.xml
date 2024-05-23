@@ -8,7 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrderModifyDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrderModifyDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/OrdersViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,7 @@
       <workItem from="1715367445426" duration="2682000" />
       <workItem from="1715597191411" duration="2257000" />
       <workItem from="1716293077147" duration="18099000" />
-      <workItem from="1716444927481" duration="3943000" />
+      <workItem from="1716444927481" duration="5862000" />
     </task>
     <servers />
   </component>
