@@ -28,30 +28,6 @@ public class OrderController {
         return null;
     }
 
-    // Create new order
-    public static Order createOrder(Order order) {
-        // Order[] newOrders = new Order[orders.length + 1];
-        // System.arraycopy(orders, 0, newOrders, 0, orders.length);
-        // newOrders[orders.length] = order;
-        // orders = newOrders;
-        // return order;
-
-        return null;
-    }
-
-    // Update order
-    public static Order updateOrder(Order order) {
-        // for (int i = 0; i < orders.length; i++) {
-        //     if (orders[i].getId() == order.getId()) {
-        //         orders[i] = order;
-        //         return order;
-        //     }
-        // }
-        // return null;
-
-        return null;
-    }
-
     // Delete order
     public static boolean deleteOrder(Order order) {
         for (int i = 0; i < orders.length; i++) {
