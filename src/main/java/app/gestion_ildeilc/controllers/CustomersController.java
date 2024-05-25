@@ -1,11 +1,10 @@
 package app.gestion_ildeilc.controllers;
 
 import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Customer;
-import java.time.LocalDate;
+
 import java.util.Objects;
 
-public class CustomerController {
+public class CustomersController {
 
     // Customers sample data
     public static Customer[] customers = {

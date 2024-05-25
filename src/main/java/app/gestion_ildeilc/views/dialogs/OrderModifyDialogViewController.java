@@ -1,19 +1,18 @@
 package app.gestion_ildeilc.views.dialogs;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ComboBox;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import app.gestion_ildeilc.controllers.OrderController;
-import app.gestion_ildeilc.controllers.CustomerController;
+import app.gestion_ildeilc.controllers.CustomersController;
 import app.gestion_ildeilc.models.Order;
+import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.models.Customer;
-import javafx.scene.control.TableView;
 import app.gestion_ildeilc.models.Line;
 import javafx.collections.FXCollections;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.util.StringConverter;
 
 public class OrderModifyDialogViewController {
@@ -45,6 +44,7 @@ public class OrderModifyDialogViewController {
 
     @FXML
     private void initialize() {
+        // Set values status select
         orderStatusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
 
         // Initialize the Spinner for totalField
@@ -68,7 +68,51 @@ public class OrderModifyDialogViewController {
         });
 
         // Populate the customer select
-        customerComboBox.setItems(FXCollections.observableArrayList(CustomerController.customers));
+        customerComboBox.setItems(FXCollections.observableArrayList(CustomersController.customers));
+
+        // Product column
+        TableColumn<Line, String> linesProductCol = new TableColumn<>("Product");
+        linesProductCol.setCellValueFactory(new PropertyValueFactory<>("product"));
+        linesProductCol.setCellValueFactory(cellData -> {
+            Product product = cellData.getValue().getProduct();
+            return new SimpleStringProperty(product.getName());
+        });
+
+        // Description column
+        TableColumn<Line, Integer> quantityCol = new TableColumn<>("Quantity");
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        // Delete button column
+        TableColumn<Line, Void> deleteCol = new TableColumn<>(" ");
+        deleteCol.setCellFactory(param -> new TableCell<Line, Void>() {
+            private final Button deleteButton = new Button("Delete");
+
+            {
+                deleteButton.setStyle("-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;");
+                deleteButton.setOnAction(event -> {
+                    Line line = getTableView().getItems().get(getIndex());
+                    getTableView().getItems().remove(line);
+                    order.deleteLine(line); // Remove the line from the order
+                    order.calculateTotal(); // Recalculate the total
+                    totalSpinner.getValueFactory().setValue(order.getTotal()); // Update the spinner value
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    HBox hBox = new HBox(deleteButton);
+                    hBox.setAlignment(Pos.CENTER);
+                    setGraphic(hBox);
+                }
+            }
+        });
+
+        // Add all columns to the table
+        linesTable.getColumns().addAll(linesProductCol, quantityCol, deleteCol);
 
         // Set autoresize property
         linesTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -87,6 +131,7 @@ public class OrderModifyDialogViewController {
         customerComboBox.setValue(order.getCustomer());
         deliveryDatePicker.setValue(order.getDeliveryDate());
         totalSpinner.getValueFactory().setValue(order.getTotal());
+        linesTable.setItems(FXCollections.observableArrayList(order.getLines()));
     }
 
     public boolean isSaveClicked() {
@@ -96,12 +141,13 @@ public class OrderModifyDialogViewController {
     @FXML
     private void handleSave() {
         if (isInputValid()) {
-            // order.setId(idField.getText()); // No set ID cuz it cannot be changed
+            // order.setId(idField.getText()); // No set cuz it cannot be changed by the user
             order.setDescription(descriptionField.getText());
             order.setStatus(orderStatusComboBox.getValue());
             order.setCustomer(customerComboBox.getValue());
             order.setDeliveryDate(deliveryDatePicker.getValue());
-            order.setTotal(totalSpinner.getValue());
+            // order.setTotal(totalSpinner.getValue()); // No set cuz it cannot be changed by the user
+            order.setLines(linesTable.getItems());
 
             order.calculateTotal();  // Calculate the total before saving
 

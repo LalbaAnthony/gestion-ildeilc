@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import app.gestion_ildeilc.controllers.OrderController;
+import app.gestion_ildeilc.controllers.OrdersController;
 
 import java.net.URL;
 
@@ -124,7 +124,7 @@ public class OrdersViewController {
                 deleteButton.setOnAction(event -> {
                     Order order = getTableView().getItems().get(getIndex());
                     getTableView().getItems().remove(order);
-                    OrderController.deleteOrder(order);
+                    OrdersController.deleteOrder(order);
                 });
             }
 
@@ -148,7 +148,7 @@ public class OrdersViewController {
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // Populate table with sample data
-        ordersTable.setItems(FXCollections.observableArrayList(OrderController.orders));
+        ordersTable.setItems(FXCollections.observableArrayList(OrdersController.orders));
     }
 
     private void showModifyOrderDialog(Order order) {
