@@ -7,14 +7,15 @@
     - [X] Make ID a string
     - [X] Use a spinner for total
     - [ ] Clean the order code before adding new shit
-    - [ ] Add line to orders
+    - [X] Add line to orders
     - [ ] Make order creation
-    - [ ] Center data in cols
     - [X] Replace all client in order modification field by actual data
-    - [ ] Duplicate order
+    - [ ] Center data in cols
+    - [ ] Duplicate order for others data type
     - [ ] Make functions to transfer order to invoices etc.
 - [ ] Controllers
 - [ ] Models
+- [ ] Fill the project with sample data to make the project easier to test
 - [ ] Last specifications check
 - [ ] Java doc
 - [ ] Units tests

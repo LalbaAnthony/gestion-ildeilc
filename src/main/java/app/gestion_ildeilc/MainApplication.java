@@ -18,8 +18,8 @@ public class MainApplication extends Application {
     private BorderPane root;
 
     // Properties: height and width of the screen
-    public static int height = 480;
     public static int width = 640;
+    public static int height = 480;
 
     @Override
     public void start(Stage stage) throws IOException {

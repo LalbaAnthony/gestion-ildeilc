@@ -2,18 +2,19 @@ package app.gestion_ildeilc.views.dialogs;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
+import javafx.collections.FXCollections;
 import app.gestion_ildeilc.controllers.CustomersController;
+import app.gestion_ildeilc.controllers.ProductsController;
 import app.gestion_ildeilc.models.Order;
 import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.models.Customer;
 import app.gestion_ildeilc.models.Line;
-import javafx.collections.FXCollections;
-import javafx.util.StringConverter;
+import javafx.geometry.Pos;
 
 public class OrderModifyDialogViewController {
 
@@ -38,6 +39,12 @@ public class OrderModifyDialogViewController {
     @FXML
     private TableView<Line> linesTable;
 
+    @FXML
+    private ComboBox<Product> productComboBox;
+
+    @FXML
+    private Spinner<Integer> quantitySpinner;
+
     private Stage dialogStage;
     private Order order;
     private boolean saveClicked = false;
@@ -48,10 +55,10 @@ public class OrderModifyDialogViewController {
         orderStatusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
 
         // Initialize the Spinner for totalField
-        SpinnerValueFactory<Double> valueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
-        totalSpinner.setValueFactory(valueFactory);
+        SpinnerValueFactory<Double> totalValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
+        totalSpinner.setValueFactory(totalValueFactory);
 
-        // Configuration du StringConverter pour afficher les noms des clients
+        // StringConverter configuration to display client's names
         customerComboBox.setConverter(new StringConverter<>() {
             @Override
             public String toString(Customer customer) {
@@ -66,9 +73,27 @@ public class OrderModifyDialogViewController {
                         .orElse(null);
             }
         });
+        customerComboBox.setItems(FXCollections.observableArrayList(CustomersController.customers)); // Populate the customer select
 
-        // Populate the customer select
-        customerComboBox.setItems(FXCollections.observableArrayList(CustomersController.customers));
+        // StringConverter configuration to display client's names
+        productComboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(Product product) {
+                return product != null ? product.getName() : "";
+            }
+
+            @Override
+            public Product fromString(String string) {
+                return productComboBox.getItems().stream()
+                        .filter(product -> product.getName().equals(string))
+                        .findFirst()
+                        .orElse(null);
+            }
+        });
+        productComboBox.setItems(FXCollections.observableArrayList(ProductsController.products)); // Populate the product select
+
+        SpinnerValueFactory<Integer> quantityValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, 1);
+        quantitySpinner.setValueFactory(quantityValueFactory);
 
         // Product column
         TableColumn<Line, String> linesProductCol = new TableColumn<>("Product");
@@ -78,7 +103,7 @@ public class OrderModifyDialogViewController {
             return new SimpleStringProperty(product.getName());
         });
 
-        // Description column
+        // Quantity column
         TableColumn<Line, Integer> quantityCol = new TableColumn<>("Quantity");
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
@@ -125,6 +150,7 @@ public class OrderModifyDialogViewController {
     public void setOrder(Order order) {
         this.order = order;
 
+        // Set all field with the order data
         idField.setText(String.valueOf(order.getId()));
         descriptionField.setText(order.getDescription());
         orderStatusComboBox.setValue(order.getStatus());
@@ -139,8 +165,29 @@ public class OrderModifyDialogViewController {
     }
 
     @FXML
+    private void handleAddLine() {
+
+        // Get values, set the qty to 1 just in case
+        Product product = productComboBox.getValue();
+        Integer quantity = quantitySpinner.getValue();
+        if (quantity == null) {
+            quantity = 1;
+        }
+
+        Line newLine = new Line(quantity, product); // Create Line object
+
+        linesTable.getItems().add(newLine); // add the line to the table
+        order.addLine(newLine); // Add line to the actual order
+
+        // Clear the input fields
+        productComboBox.getSelectionModel().clearSelection();
+        quantitySpinner.getValueFactory().setValue(null);
+    }
+
+    @FXML
     private void handleSave() {
         if (isInputValid()) {
+            // Set of all values, might be replaced in the future by a dedicated methode
             // order.setId(idField.getText()); // No set cuz it cannot be changed by the user
             order.setDescription(descriptionField.getText());
             order.setStatus(orderStatusComboBox.getValue());

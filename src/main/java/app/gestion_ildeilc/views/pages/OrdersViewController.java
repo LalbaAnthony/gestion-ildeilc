@@ -1,33 +1,30 @@
 package app.gestion_ildeilc.views.pages;
 
-import app.gestion_ildeilc.views.dialogs.OrderModifyDialogViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableCell;
-import javafx.util.converter.NumberStringConverter;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.StringConverter;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.geometry.Pos;
-import javafx.collections.FXCollections;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.util.converter.NumberStringConverter;
+import javafx.util.StringConverter;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import app.gestion_ildeilc.controllers.OrdersController;
+import app.gestion_ildeilc.views.dialogs.OrderModifyDialogViewController;
 import app.gestion_ildeilc.models.Customer;
 import app.gestion_ildeilc.models.Order;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-import app.gestion_ildeilc.controllers.OrdersController;
-
+import javafx.geometry.Pos;
 import java.net.URL;
 
 public class OrdersViewController {
@@ -166,7 +163,7 @@ public class OrdersViewController {
             dialogStage.setTitle("Modify Order");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(ordersTable.getScene().getWindow());
-            Scene scene = new Scene(page, 380, 380);
+            Scene scene = new Scene(page, 480, 640);
             dialogStage.setScene(scene);
 
             OrderModifyDialogViewController controller = loader.getController();

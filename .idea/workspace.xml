@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

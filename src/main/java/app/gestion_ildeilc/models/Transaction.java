@@ -18,8 +18,8 @@ public class Transaction {
         this.description = description;
         this.total = total;
         this.creationDate = LocalDate.now();
-        this.lines = new ArrayList<>(lines); // Assure une collection modifiable
-        calculateTotal(); // Initial calculation of the total
+        this.lines = new ArrayList<>(lines); // To make the collection editable
+        calculateTotal(); // Initial calculation of the total, to ensure data integrity
     }
 
     // ================ Getters ================
@@ -63,7 +63,7 @@ public class Transaction {
     }
 
     public void setLines(List<Line> lines) {
-        this.lines = new ArrayList<>(lines); // Assure une collection modifiable
+        this.lines = new ArrayList<>(lines); // To make the collection editable
         calculateTotal(); // Recalculate the total when lines are set
     }
 
