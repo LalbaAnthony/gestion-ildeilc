@@ -5,11 +5,15 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
+import app.gestion_ildeilc.controllers.OrderController;
+import app.gestion_ildeilc.controllers.CustomerController;
 import app.gestion_ildeilc.models.Order;
+import app.gestion_ildeilc.models.Customer;
+import javafx.scene.control.TableView;
+import app.gestion_ildeilc.models.Line;
 import javafx.collections.FXCollections;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-import app.gestion_ildeilc.models.Customer;
 import javafx.util.StringConverter;
 
 public class OrderModifyDialogViewController {
@@ -31,6 +35,9 @@ public class OrderModifyDialogViewController {
 
     @FXML
     private Spinner<Double> totalSpinner;
+
+    @FXML
+    private TableView<Line> linesTable;
 
     private Stage dialogStage;
     private Order order;
@@ -60,10 +67,11 @@ public class OrderModifyDialogViewController {
             }
         });
 
-        customerComboBox.setItems(FXCollections.observableArrayList(
-                new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"),
-                new Customer("1", "John 2", "Doe", "tets@gmail.com", "Lorem address")
-        ));
+        // Populate the customer select
+        customerComboBox.setItems(FXCollections.observableArrayList(CustomerController.customers));
+
+        // Set autoresize property
+        linesTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     public void setDialogStage(Stage dialogStage) {
@@ -94,6 +102,8 @@ public class OrderModifyDialogViewController {
             order.setCustomer(customerComboBox.getValue());
             order.setDeliveryDate(deliveryDatePicker.getValue());
             order.setTotal(totalSpinner.getValue());
+
+            order.calculateTotal();  // Calculate the total before saving
 
             saveClicked = true;
             dialogStage.close();

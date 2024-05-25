@@ -4,14 +4,18 @@
     - [X] Order: add id
     - [X] Fix visuals issues dialog
     - [X] Change size of dialog and make an extends
-    - [ ] Clean the order code before adding new shit
     - [X] Make ID a string
     - [X] Use a spinner for total
+    - [ ] Clean the order code before adding new shit
+    - [ ] Add line to orders
+    - [ ] Make order creation
     - [ ] Center data in cols
+    - [X] Replace all client in order modification field by actual data
     - [ ] Duplicate order
-    - [ ] Replace all client in order modification field by actual data
+    - [ ] Make functions to transfer order to invoices etc.
 - [ ] Controllers
 - [ ] Models
+- [ ] Last specifications check
 - [ ] Java doc
 - [ ] Units tests
 - [ ] Look for any warning in the code

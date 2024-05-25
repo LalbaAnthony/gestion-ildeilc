@@ -37,9 +37,21 @@
         <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
         <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <Spinner fx:id="totalSpinner" GridPane.rowIndex="5" GridPane.columnIndex="1"/>  <!-- Use Spinner here -->
+        <Spinner fx:id="totalSpinner" disable="true" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
     </GridPane>
+
+
+    <TableView fx:id="linesTable" GridPane.rowIndex="5" GridPane.columnIndex="1">
+        <columns>
+            <TableColumn fx:id="productColumn" text="Product"/>
+            <TableColumn fx:id="quantityColumn" text="Quantity"/>
+        </columns>
+    </TableView>
+
     <HBox spacing="10" alignment="CENTER_RIGHT">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
         <Button text="Cancel" style="-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;"
                 onAction="#handleCancel"/>
         <Button text="Save" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"

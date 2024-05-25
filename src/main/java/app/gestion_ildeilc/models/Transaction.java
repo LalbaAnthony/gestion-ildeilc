@@ -1,6 +1,7 @@
 package app.gestion_ildeilc.models;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Transaction {
     private final String id;
@@ -9,12 +10,15 @@ public class Transaction {
     private Customer customer;
     private final LocalDate creationDate;
 
-    public Transaction(String id, Customer customer, String description, double total) {
+    private List<Line> lines;
+
+    public Transaction(String id, Customer customer, String description, double total, List<Line> lines) {
         this.id = id;
         this.customer = customer;
         this.description = description;
         this.total = total;
         this.creationDate = LocalDate.now();
+        this.lines = lines;
     }
 
     // ================ Getters ================
@@ -39,6 +43,10 @@ public class Transaction {
         return creationDate;
     }
 
+    public List<Line> getLines() {
+        return lines;
+    }
+
     // ================ Setters ================
 
     public void setCustomer(Customer customer) {
@@ -53,4 +61,17 @@ public class Transaction {
         this.total = total;
     }
 
+    public void setLines(List<Line> lines) {
+        this.lines = lines;
+    }
+
+    // ================ Methods ================
+
+    public void calculateTotal() {
+        double calculatedTotal = 0.0;
+        for (Line line : lines) {
+            calculatedTotal += line.getQuantity() * line.getProduct().getPrice();
+        }
+        this.total = calculatedTotal;
+    }
 }

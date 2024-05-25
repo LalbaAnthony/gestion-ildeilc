@@ -166,7 +166,7 @@ public class OrdersViewController {
             dialogStage.setTitle("Modify Order");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(ordersTable.getScene().getWindow());
-            Scene scene = new Scene(page, 360, 300);
+            Scene scene = new Scene(page, 380, 380);
             dialogStage.setScene(scene);
 
             OrderModifyDialogViewController controller = loader.getController();

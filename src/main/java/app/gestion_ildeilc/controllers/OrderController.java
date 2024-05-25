@@ -2,15 +2,18 @@ package app.gestion_ildeilc.controllers;
 
 import app.gestion_ildeilc.models.Order;
 import app.gestion_ildeilc.models.Customer;
+import app.gestion_ildeilc.models.Product;
+import app.gestion_ildeilc.models.Line;
+
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Arrays;
 
 public class OrderController {
 
     // Orders sample data
     public static Order[] orders = {
-            new Order("1", new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 1", 100.1, LocalDate.of(2021, 10, 1)),
-            new Order("2", new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 2", 200.0, LocalDate.of(2021, 10, 2))
+            new Order("2", new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"), "Order 2", 200.0, LocalDate.of(2021, 10, 2), Arrays.asList(new Line(2, new Product("2", "Product 2", "Lorem ipsum", 20.0))))
     };
 
     // Get all orders

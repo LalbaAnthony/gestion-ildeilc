@@ -69,15 +69,4 @@ public class Customer {
     public String getNiceName() {
         return firstName + " " + lastName;
     }
-
-    public void printCustomer() {
-        System.out.println("===================================");
-        System.out.println("Customer ID: " + getId());
-        System.out.println("Last Name: " + getLastName());
-        System.out.println("First Name: " + getFirstName());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Address: " + getAddress());
-        System.out.println("Creation Date: " + getCreationDate());
-        System.out.println("===================================");
-    }
 }
