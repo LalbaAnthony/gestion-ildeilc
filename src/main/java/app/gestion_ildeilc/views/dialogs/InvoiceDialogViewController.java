@@ -52,7 +52,7 @@ public class InvoiceDialogViewController {
         // Set values paid select
         paidComboBox.getItems().addAll("Pending", "Processing", "Paid");
 
-        // Initialize the Spinner for totalField
+        // Initialize the Spinner for total
         SpinnerValueFactory<Double> totalValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
         totalSpinner.setValueFactory(totalValueFactory);
 

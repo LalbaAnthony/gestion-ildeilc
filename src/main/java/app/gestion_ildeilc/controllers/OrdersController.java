@@ -20,7 +20,7 @@ public class OrdersController {
 
     static {
         // Sample order 1
-        Order order1 = new Order("1", new Customer("1", "John", "Doe", "test@gmail.com", "123 Main St"), "Order 1", 50.0, LocalDate.of(2024, 5, 30),"Completed", Arrays.asList(
+        Order order1 = new Order("1", new Customer("1", "John", "Doe", "test@gmail.com", "123 Main St"), "Order 1", 50.0, LocalDate.of(2024, 5, 30),"Received", Arrays.asList(
                 new Line(1, new Product("1", "Product 1", "Description 1", 10.0, 10)),
                 new Line(2, new Product("2", "Product 2", "Description 2", 20.0, 10)),
                 new Line(3, new Product("3", "Product 3", "Description 3", 30.0, 10))
@@ -75,13 +75,15 @@ public class OrdersController {
         orders.add(newOrder);
     }
 
+    // ================ Invoices related ================
+
     public static void createInvoice(Order order) {
         if (!order.canCreateInvoice()) {
-            // Optionally show a message to the user that the order cannot be completed
+            // Optionally show a message to the user that the order cannot be Received
             return;
         }
 
-        order.setStatus("Completed");
+        order.setStatus("Received");
 
         Invoice invoice = new Invoice(
                 order.getId(),

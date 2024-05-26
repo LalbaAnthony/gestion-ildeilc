@@ -58,9 +58,9 @@ public class OrderDialogViewController {
     @FXML
     private void initialize() {
         // Set values status select
-        statusComboBox.getItems().addAll("Pending", "Processing", "Sent", "Completed", "Cancelled");
+        statusComboBox.getItems().addAll("Pending", "Processing", "Sent", "Received", "Cancelled");
 
-        // Initialize the Spinner for totalField
+        // Initialize the Spinner for tota
         SpinnerValueFactory<Double> totalValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
         totalSpinner.setValueFactory(totalValueFactory);
 

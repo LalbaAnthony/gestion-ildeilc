@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/ProductDialogViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/ProductsPageViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/product-dialog-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/products-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/InvoicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/InvoicesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/InvoiceDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/InvoiceDialogViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/InvoicesPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/InvoicesPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoice-dialog-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoice-dialog-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +90,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app.gestion_ildeilc.views.dialogs" />
+      <recent name="app.gestion_ildeilc.views.pages" />
     </key>
   </component>
   <component name="RunManager">

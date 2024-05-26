@@ -48,7 +48,7 @@ public class Product {
     }
 
     public void setDescription(String description) {
-        this.description = Product.this.description;
+        this.description = description;
     }
 
     public void setPrice(double price) {

@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <VBox spacing="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="app.gestion_ildeilc.views.dialogs.InvoiceDialogViewController">
+      fx:controller="app.gestion_ildeilc.views.dialogs.ProductDialogViewController">
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
@@ -13,7 +13,7 @@
         <Label fx:id="pageTitle" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
     </HBox>
 
-    <!-- Invoice form -->
+    <!-- Product form -->
     <GridPane hgap="10" vgap="10" alignment="CENTER">
         <padding>
             <Insets top="10" right="10" bottom="10" left="10"/>
@@ -22,25 +22,18 @@
         <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <TextField fx:id="idField" disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-        <Label text="Customer:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="customerComboBox" disable="true" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Description:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="descriptionField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-        <Label text="Paid ?:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="paidComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Price:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Spinner fx:id="priceSpinner" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-        <Label text="Delivered Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="deliveredDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-
-        <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <Spinner fx:id="totalSpinner" disable="true" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label text="Stock:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Spinner fx:id="stockSpinner" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
     </GridPane>
-
-    <!-- Lines table -->
-    <TableView fx:id="linesTable" GridPane.rowIndex="5" GridPane.columnIndex="1">
-    </TableView>
 
     <!-- Save and cancel button -->
     <HBox spacing="10" alignment="CENTER_RIGHT">

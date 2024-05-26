@@ -38,10 +38,10 @@ public class Order extends Transaction {
     // ================ Computed ================
 
     public boolean canModify() {
-        return !("Cancelled".equals(status) || "Completed".equals(status));
+        return !("Cancelled".equals(status) || "Received".equals(status) || "Sent".equals(status));
     }
 
     public boolean canCreateInvoice() {
-        return ("Processing".equals(status) || "Completed".equals(status) || "Sent".equals(status));
+        return ("Received".equals(status) || "Sent".equals(status));
     }
 }

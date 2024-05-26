@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
+
 import java.io.IOException;
 import java.util.Objects;
 
@@ -24,23 +25,26 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         // Create the header buttons
+        Button btnProducts = new Button("Products");
         Button btnOrders = new Button("Orders");
         Button btnInvoices = new Button("Invoices");
         Button btnClose = new Button("Close app"); // Button to close the app
 
         // Add action to change the view using the buttons
+        btnProducts.setOnAction(e -> switchView("products-page-view.fxml"));
         btnOrders.setOnAction(e -> switchView("orders-page-view.fxml"));
         btnInvoices.setOnAction(e -> switchView("invoices-page-view.fxml"));
         btnClose.setOnAction(e -> stage.close()); // Action to close the app when clicked
 
         // Apply CSS styling to the buttons
+        btnProducts.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
         btnOrders.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
         btnInvoices.setStyle("-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;");
-        btnClose.setStyle("-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;"); // Styling for close button
+        btnClose.setStyle("-fx-background-color: #848484; -fx-text-fill: white; -fx-font-weight: bold;");
 
         // Create a HBox container for the header buttons
         HBox topMenu = new HBox(10); // Set a 10 spacing between buttons | HBox -> Horizontal flex, VBox Vertical flex
-        topMenu.getChildren().addAll(btnOrders, btnInvoices, btnClose);
+        topMenu.getChildren().addAll(btnProducts, btnOrders, btnInvoices, btnClose);
         topMenu.setAlignment(javafx.geometry.Pos.CENTER); // Align buttons in center
 
         // Create a BorderPane container for the header
