@@ -77,7 +77,7 @@ public class ProductsPageViewController {
                 if (empty || item == null) {
                     setText(null);
                 } else {
-                    setText(converter.toString(item) + " €");
+                    setText(converter.toString(item) + " u.");
                 }
             }
         });

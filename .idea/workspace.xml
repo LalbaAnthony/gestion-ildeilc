@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/ProductDialogViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/ProductsPageViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/product-dialog-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/products-page-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/DeliveryNotesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/DeliveryNote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryNotesPageViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/InvoiceDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/InvoiceDialogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoice-dialog-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoice-dialog-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/ProductsPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/ProductsPageViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +79,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.28390804",
     "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,8 +88,10 @@
       <recent name="C:\projects\gestion_ILDEILC\src\main\resources\app\gestion_ildeilc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.gestion_ildeilc.views.dialogs" />
       <recent name="app.gestion_ildeilc.views.pages" />
+      <recent name="app.gestion_ildeilc.controllers" />
+      <recent name="app.gestion_ildeilc.models" />
+      <recent name="app.gestion_ildeilc.views.dialogs" />
     </key>
   </component>
   <component name="RunManager">
@@ -142,5 +143,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
