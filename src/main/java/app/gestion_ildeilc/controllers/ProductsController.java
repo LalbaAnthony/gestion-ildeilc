@@ -12,12 +12,12 @@ public class ProductsController {
     public static ObservableList<Product> products = FXCollections.observableArrayList();
 
     static {
-        Product product1 = new Product("1", "Product 1", "Description 1", 10.0);
-        Product product2 = new Product("2", "Product 2", "Description 2", 20.0);
-        Product product3 = new Product("3", "Product 3", "Description 3", 30.0);
-        Product product4 = new Product("4", "Product 4", "Description 4", 40.0);
-        Product product5 = new Product("5", "Product 5", "Description 5", 15.0);
-        Product product6 = new Product("6", "Product 6", "Description 6", 15.0);
+        Product product1 = new Product("1", "Product 1", "Description 1", 10.0, 10);
+        Product product2 = new Product("2", "Product 2", "Description 2", 20.0, 10);
+        Product product3 = new Product("3", "Product 3", "Description 3", 30.0, 10);
+        Product product4 = new Product("4", "Product 4", "Description 4", 40.0, 10);
+        Product product5 = new Product("5", "Product 5", "Description 5", 15.0, 10);
+        Product product6 = new Product("6", "Product 6", "Description 6", 15.0, 10);
 
         // Adding products to the list
         products.addAll(product1, product2, product3, product4, product5, product6);

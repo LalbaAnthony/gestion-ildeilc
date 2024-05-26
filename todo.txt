@@ -13,16 +13,21 @@
 - [X] Models
 - [X] Make order creation
 - [X] Replace all client in order modification field by actual data
-- [ ] Duplicate order for others data type (view, controller, ...)
+- [X] Add stock to product
+- [X] Duplicate order for others data type (view, controller, ...)
+- [ ] Maj todo with specs
+- [ ] Empty the line list one order creation
+- [ ] Make products crud
 - [ ] Make functions to transfer order to invoices etc.
 - [ ] Check what the hell is supposed to be "Delivery notes"
 - [ ] Fill the project with sample data to make the project easier to test
-- [ ] Click right and optimize import of all files
 - [ ] Move all the app logic to controller so most of the code is reusable for another app
 - [ ] Last specifications check
+- [ ] Click right and optimize import of all files
 - [ ] Java doc
 - [ ] Units tests
 - [ ] Look for any warning in the code
+- [ ] Write the documents to be submitted
 - [ ] Check for classes diagrams
 - [ ] Merge branch dev & main
 

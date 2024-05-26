@@ -3,7 +3,6 @@ package app.gestion_ildeilc.controllers;
 import app.gestion_ildeilc.models.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.util.Objects;
 
 public class CustomersController {

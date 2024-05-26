@@ -23,7 +23,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -177,7 +176,6 @@ public class InvoicesPageViewController {
             controller.setDialogStage(dialogStage);
 
             // If is an invoice modification
-            controller.isModification = true;
             controller.pageTitle.setText("Modify an invoice");
             controller.setInvoice(invoice);
 

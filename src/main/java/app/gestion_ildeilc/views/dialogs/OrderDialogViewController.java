@@ -58,7 +58,7 @@ public class OrderDialogViewController {
     @FXML
     private void initialize() {
         // Set values status select
-        statusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
+        statusComboBox.getItems().addAll("Pending", "Processing", "Sent", "Completed", "Cancelled");
 
         // Initialize the Spinner for totalField
         SpinnerValueFactory<Double> totalValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
@@ -78,7 +78,7 @@ public class OrderDialogViewController {
         });
         customerComboBox.setItems(FXCollections.observableArrayList(CustomersController.customers)); // Populate the customer select
 
-        // StringConverter configuration to display client's names
+        // StringConverter configuration to display product's names
         productComboBox.setConverter(new StringConverter<>() {
             @Override
             public String toString(Product product) {

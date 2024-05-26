@@ -23,7 +23,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -97,8 +96,8 @@ public class OrdersPageViewController {
             {
                 modifyButton.setStyle("-fx-background-color: #FF7F50; -fx-text-fill: white; -fx-font-weight: bold;");
                 modifyButton.setOnAction(event -> {
-                    // Order order = getTableView().getItems().get(getIndex());
-                    // showOrderDialogModify(order);
+                    Order order = getTableView().getItems().get(getIndex());
+                    OrdersController.createInvoice(order);
                 });
             }
 
@@ -209,7 +208,7 @@ public class OrdersPageViewController {
             // If is an order creation
             controller.isModification = false;
             controller.pageTitle.setText("Create an order");
-            Order order = new Order(OrdersController.generateId(), null, null, 0.0, null, "Pending", Arrays.asList(new Line(2, new Product("1", "Product 1", "Lorem ipsum", 21.5))));
+            Order order = new Order(OrdersController.generateId(), null, null, 0.0, null, "Pending", Arrays.asList(new Line(2, new Product("1", "Product 1", "Lorem ipsum", 21.5, 10))));
             controller.setOrder(order);
 
             dialogStage.showAndWait();

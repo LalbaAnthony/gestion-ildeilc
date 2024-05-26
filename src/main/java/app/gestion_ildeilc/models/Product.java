@@ -8,11 +8,14 @@ public class Product {
 
     private double price;
 
-    public Product(String id, String name, String description, double price) {
+    private int stock;
+
+    public Product(String id, String name, String description, double price, int stock) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.stock = stock;
     }
 
     // ================ Getters ================
@@ -33,6 +36,10 @@ public class Product {
         return price;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
     // ================ Setters ================
 
 
@@ -46,5 +53,9 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

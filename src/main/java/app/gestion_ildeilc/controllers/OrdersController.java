@@ -21,16 +21,16 @@ public class OrdersController {
     static {
         // Sample order 1
         Order order1 = new Order("1", new Customer("1", "John", "Doe", "test@gmail.com", "123 Main St"), "Order 1", 50.0, LocalDate.of(2024, 5, 30),"Completed", Arrays.asList(
-                new Line(1, new Product("1", "Product 1", "Description 1", 10.0)),
-                new Line(2, new Product("2", "Product 2", "Description 2", 20.0)),
-                new Line(3, new Product("3", "Product 3", "Description 3", 30.0))
+                new Line(1, new Product("1", "Product 1", "Description 1", 10.0, 10)),
+                new Line(2, new Product("2", "Product 2", "Description 2", 20.0, 10)),
+                new Line(3, new Product("3", "Product 3", "Description 3", 30.0, 10))
         ));
 
         // Sample order 2
         Order order2 = new Order("2", new Customer("2", "Jane", "Smith", "jane.smith@gmail.com", "456 Elm St"), "Order 2", 70.0, LocalDate.of(2024, 6, 1),"Processing", Arrays.asList(
-                new Line(1, new Product("4", "Product 4", "Description 4", 40.0)),
-                new Line(2, new Product("5", "Product 5", "Description 5", 15.0)),
-                new Line(3, new Product("6", "Product 6", "Description 6", 15.0))
+                new Line(1, new Product("4", "Product 4", "Description 4", 40.0, 10)),
+                new Line(2, new Product("5", "Product 5", "Description 5", 15.0, 10)),
+                new Line(3, new Product("6", "Product 6", "Description 6", 15.0, 10))
         ));
 
         // Adding orders to the list
@@ -75,7 +75,7 @@ public class OrdersController {
         orders.add(newOrder);
     }
 
-    private void generateInvoice(Order order) {
+    public static void createInvoice(Order order) {
         if (!order.canCreateInvoice()) {
             // Optionally show a message to the user that the order cannot be completed
             return;
@@ -89,11 +89,11 @@ public class OrdersController {
                 order.getDescription(),
                 order.getTotal(),
                 order.getDeliveryDate(),
-                "Processing",
+                "Pending",
                 new ArrayList<>(order.getLines())
         );
 
-        InvoicesController.invoices.add(invoice);
+        InvoicesController.addInvoice(invoice);
 
         // Optionally update the UI to reflect the change in order status, no utility for now but might be useful in da future
         // ordersTable.refresh();

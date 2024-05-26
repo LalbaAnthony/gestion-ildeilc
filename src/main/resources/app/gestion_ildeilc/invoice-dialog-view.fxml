@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <VBox spacing="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="app.gestion_ildeilc.views.dialogs.OrderDialogViewController">
+      fx:controller="app.gestion_ildeilc.views.dialogs.InvoiceDialogViewController">
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
@@ -13,7 +13,7 @@
         <Label fx:id="pageTitle" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
     </HBox>
 
-    <!-- Order form -->
+    <!-- Invoice form -->
     <GridPane hgap="10" vgap="10" alignment="CENTER">
         <padding>
             <Insets top="10" right="10" bottom="10" left="10"/>
@@ -26,13 +26,13 @@
         <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
         <Label text="Customer:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="customerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="customerComboBox" disable="true" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
         <Label text="Paid ?:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="invoicePaidComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="paidComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-        <Label text="Delivery Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Delivered Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="deliveredDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
         <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
         <Spinner fx:id="totalSpinner" disable="true" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
@@ -41,17 +41,6 @@
     <!-- Lines table -->
     <TableView fx:id="linesTable" GridPane.rowIndex="5" GridPane.columnIndex="1">
     </TableView>
-
-    <!-- Line add -->
-    <HBox spacing="10">
-        <Label text="Product:" />
-        <ComboBox fx:id="productComboBox" />
-
-        <Label text="Quantity:" />
-        <Spinner fx:id="quantitySpinner" promptText="Quantity" />
-
-        <Button text="Add Line" style="-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#handleAddLine" />
-    </HBox>
 
     <!-- Save and cancel button -->
     <HBox spacing="10" alignment="CENTER_RIGHT">

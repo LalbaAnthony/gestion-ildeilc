@@ -1,10 +1,9 @@
 package app.gestion_ildeilc.controllers;
 
 import app.gestion_ildeilc.models.Customer;
+import app.gestion_ildeilc.models.Invoice;
 import app.gestion_ildeilc.models.Line;
-import app.gestion_ildeilc.models.Invoice;
 import app.gestion_ildeilc.models.Product;
-import app.gestion_ildeilc.models.Invoice;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -20,9 +19,9 @@ public class InvoicesController {
     static {
         // Sample invoice 1
         Invoice invoice1 = new Invoice("1", new Customer("1", "John", "Doe", "test@gmail.com", "123 Main St"), "Invoice 1", 50.0, LocalDate.of(2024, 6, 5), "Processing", Arrays.asList(
-                new Line(1, new Product("1", "Product 1", "Description 1", 10.0)),
-                new Line(2, new Product("2", "Product 2", "Description 2", 20.0)),
-                new Line(3, new Product("3", "Product 3", "Description 3", 30.0))
+                new Line(1, new Product("1", "Product 1", "Description 1", 10.0, 10)),
+                new Line(2, new Product("2", "Product 2", "Description 2", 20.0, 10)),
+                new Line(3, new Product("3", "Product 3", "Description 3", 30.0, 10))
         ));
 
         // Adding invoices to the list

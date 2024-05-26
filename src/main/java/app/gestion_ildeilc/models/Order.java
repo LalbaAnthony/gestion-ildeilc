@@ -42,6 +42,6 @@ public class Order extends Transaction {
     }
 
     public boolean canCreateInvoice() {
-        return ("Processing".equals(status) || "Completed".equals(status));
+        return ("Processing".equals(status) || "Completed".equals(status) || "Sent".equals(status));
     }
 }
