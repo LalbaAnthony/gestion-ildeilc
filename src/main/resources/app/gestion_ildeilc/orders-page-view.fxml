@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
-
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="app.gestion_ildeilc.views.pages.OrdersPageViewController">
     <padding>
@@ -15,12 +11,13 @@
 
     <Label text="List of orders"/>
 
+    <!-- Add button -->
     <HBox spacing="10" alignment="CENTER_RIGHT">
         <Button text="Add order" style="-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;"
                 onAction="#showOrderDialogCreation"/>
     </HBox>
 
-    <!-- Define TableView -->
+    <!-- Main items table -->
     <TableView fx:id="ordersTable">
     </TableView>
 

@@ -7,10 +7,10 @@
 - [X] Use a spinner for total
 - [X] Clean the order code before adding new shit
 - [X] Add line to orders
-- [ ] Make order creation
+- [-] Center data in cols
+- [X] Make order creation
 - [X] Replace all client in order modification field by actual data
-- [ ] Center data in cols
-- [ ] Duplicate order for others data type
+- [ ] Duplicate order for others data type (view, controller, ...)
 - [ ] Make functions to transfer order to invoices etc.
 - [ ] Views
 - [ ] Controllers

@@ -1,19 +1,26 @@
 package app.gestion_ildeilc.controllers;
 
 import app.gestion_ildeilc.models.Customer;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.Objects;
 
 public class CustomersController {
 
     // Customers sample data
-    public static Customer[] customers = {
-            new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"),
-            new Customer("1", "John", "Doe", "tets@gmail.com", "Lorem address"),
-    };
+    public static ObservableList<Customer> customers = FXCollections.observableArrayList();
+
+    static {
+        Customer customer1 = new Customer("1", "Henri", "Car", "eauetanis@gmail.com", "Lorem address");
+        Customer customer2 = new Customer("1", "Jean", "Bombeur", "beureetjambon@gmail.com", "Lorem address");
+
+        // Adding customers to the list
+        customers.addAll(customer1, customer2);
+    }
 
     // Get all customers
-    public static Customer[] getAllCustomers() {
+    public static ObservableList<Customer> getAllCustomers() {
         return customers;
     }
 
@@ -29,16 +36,24 @@ public class CustomersController {
 
     // Delete customer
     public static boolean deleteCustomer(Customer customer) {
-        for (int i = 0; i < customers.length; i++) {
-            if (Objects.equals(customers[i].getId(), customer.getId())) {
-                Customer[] newCustomers = new Customer[customers.length - 1];
-                System.arraycopy(customers, 0, newCustomers, 0, i);
-                System.arraycopy(customers, i + 1, newCustomers, i, customers.length - i - 1);
-                customers = newCustomers;
-                return true;
-            }
-        }
-        return false;
+        return customers.remove(customer);
     }
 
+    // Generate a unique ID
+    public static String generateId() {
+        int maxId = 0;
+        for (Customer customer : customers) {
+            int id = Integer.parseInt(customer.getId());
+            if (id > maxId) {
+                maxId = id;
+            }
+        }
+        return String.valueOf(maxId + 1);
+    }
+
+
+    // Add a new customer
+    public static void addCustomer(Customer newCustomer) {
+        customers.add(newCustomer);
+    }
 }

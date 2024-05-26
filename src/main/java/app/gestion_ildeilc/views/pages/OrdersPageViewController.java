@@ -7,7 +7,6 @@ import app.gestion_ildeilc.models.Order;
 import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.views.dialogs.OrderDialogViewController;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -90,6 +89,35 @@ public class OrdersPageViewController {
             }
         });
 
+        // Facture button column
+        TableColumn<Order, Void> createInvoiceCol = new TableColumn<>(" ");
+        createInvoiceCol.setCellFactory(param -> new TableCell<Order, Void>() {
+            private final Button modifyButton = new Button("Create an invoice");
+
+            {
+                modifyButton.setStyle("-fx-background-color: #FF7F50; -fx-text-fill: white; -fx-font-weight: bold;");
+                modifyButton.setOnAction(event -> {
+                    // Order order = getTableView().getItems().get(getIndex());
+                    // showOrderDialogModify(order);
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    Order order = getTableView().getItems().get(getIndex());
+                    // Disable the modification if depending on the status
+                    modifyButton.setDisable(!order.canCreateInvoice());
+                    HBox hBox = new HBox(modifyButton);
+                    hBox.setAlignment(Pos.CENTER);
+                    setGraphic(hBox);
+                }
+            }
+        });
+
         // Modify button column
         TableColumn<Order, Void> modifyCol = new TableColumn<>(" ");
         modifyCol.setCellFactory(param -> new TableCell<Order, Void>() {
@@ -109,6 +137,9 @@ public class OrdersPageViewController {
                 if (empty) {
                     setGraphic(null);
                 } else {
+                    Order order = getTableView().getItems().get(getIndex());
+                    // Disable the modification if depending on the status
+                    modifyButton.setDisable(!order.canModify());
                     HBox hBox = new HBox(modifyButton);
                     hBox.setAlignment(Pos.CENTER);
                     setGraphic(hBox);
@@ -144,13 +175,13 @@ public class OrdersPageViewController {
         });
 
         // Add all columns to the table
-        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, statusCol, customerNameCol, deliveryDateCol, totalCol, modifyCol, deleteCol);
+        ordersTable.getColumns().addAll(orderIdCol, descriptionCol, statusCol, customerNameCol, deliveryDateCol, totalCol, createInvoiceCol, modifyCol, deleteCol);
 
         // Set autoresize property
         ordersTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         // Populate table with sample data
-        ordersTable.setItems(FXCollections.observableArrayList(OrdersController.orders));
+        ordersTable.setItems(OrdersController.orders);
     }
 
     @FXML
@@ -178,7 +209,7 @@ public class OrdersPageViewController {
             // If is an order creation
             controller.isModification = false;
             controller.pageTitle.setText("Create an order");
-            Order order = new Order(OrdersController.generateId(), null, null, 0.0, null, Arrays.asList(new Line(2, new Product("2", "Product 2", "Lorem ipsum", 20.0))));
+            Order order = new Order(OrdersController.generateId(), null, null, 0.0, null, "Pending", Arrays.asList(new Line(2, new Product("1", "Product 1", "Lorem ipsum", 21.5))));
             controller.setOrder(order);
 
             dialogStage.showAndWait();

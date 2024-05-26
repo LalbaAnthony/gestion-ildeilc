@@ -1,22 +1,21 @@
 package app.gestion_ildeilc.views.dialogs;
 
-import app.gestion_ildeilc.views.pages.OrdersPageViewController;
+import app.gestion_ildeilc.controllers.CustomersController;
+import app.gestion_ildeilc.controllers.OrdersController;
+import app.gestion_ildeilc.controllers.ProductsController;
+import app.gestion_ildeilc.models.Customer;
+import app.gestion_ildeilc.models.Line;
+import app.gestion_ildeilc.models.Order;
+import app.gestion_ildeilc.models.Product;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import javafx.collections.FXCollections;
-import app.gestion_ildeilc.controllers.OrdersController;
-import app.gestion_ildeilc.controllers.CustomersController;
-import app.gestion_ildeilc.controllers.ProductsController;
-import app.gestion_ildeilc.models.Order;
-import app.gestion_ildeilc.models.Product;
-import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Line;
-import javafx.geometry.Pos;
 
 public class OrderDialogViewController {
 
@@ -74,10 +73,7 @@ public class OrderDialogViewController {
 
             @Override
             public Customer fromString(String string) {
-                return customerComboBox.getItems().stream()
-                        .filter(customer -> customer.getNiceName().equals(string))
-                        .findFirst()
-                        .orElse(null);
+                return customerComboBox.getItems().stream().filter(customer -> customer.getNiceName().equals(string)).findFirst().orElse(null);
             }
         });
         customerComboBox.setItems(FXCollections.observableArrayList(CustomersController.customers)); // Populate the customer select
@@ -91,10 +87,7 @@ public class OrderDialogViewController {
 
             @Override
             public Product fromString(String string) {
-                return productComboBox.getItems().stream()
-                        .filter(product -> product.getName().equals(string))
-                        .findFirst()
-                        .orElse(null);
+                return productComboBox.getItems().stream().filter(product -> product.getName().equals(string)).findFirst().orElse(null);
             }
         });
         productComboBox.setItems(FXCollections.observableArrayList(ProductsController.products)); // Populate the product select
@@ -113,6 +106,15 @@ public class OrderDialogViewController {
         // Quantity column
         TableColumn<Line, Integer> quantityCol = new TableColumn<>("Quantity");
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        // Price column
+        TableColumn<Line, String> priceCol = new TableColumn<>("Unit price");
+        priceCol.setCellValueFactory(cellData -> {
+            Product product = cellData.getValue().getProduct();
+            String priceString = String.format("%.2f €", product.getPrice());
+            return new SimpleStringProperty(priceString);
+        });
+
 
         // Delete button column
         TableColumn<Line, Void> deleteCol = new TableColumn<>(" ");
@@ -144,7 +146,7 @@ public class OrderDialogViewController {
         });
 
         // Add all columns to the table
-        linesTable.getColumns().addAll(linesProductCol, quantityCol, deleteCol);
+        linesTable.getColumns().addAll(linesProductCol, quantityCol, priceCol, deleteCol);
 
         // Set autoresize property
         linesTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -191,27 +193,23 @@ public class OrderDialogViewController {
 
     @FXML
     private void handleSave() {
-        if (isInputValid()) {
-            // Set of all values, might be replaced in the future by a dedicated methode
-            // order.setId(idField.getText()); // No set cuz it cannot be changed by the user
-            order.setDescription(descriptionField.getText());
-            order.setStatus(orderStatusComboBox.getValue());
-            order.setCustomer(customerComboBox.getValue());
-            order.setDeliveryDate(deliveryDatePicker.getValue());
-            // order.setTotal(totalSpinner.getValue()); // No set cuz it cannot be changed by the user
-            order.setLines(linesTable.getItems());
+        // Set of all values, might be replaced in the future by a dedicated methode
+        // order.setId(idField.getText()); // No set cuz it cannot be changed by the user
+        order.setDescription(descriptionField.getText());
+        order.setStatus(orderStatusComboBox.getValue());
+        order.setCustomer(customerComboBox.getValue());
+        order.setDeliveryDate(deliveryDatePicker.getValue());
+        // order.setTotal(totalSpinner.getValue()); // No set cuz it cannot be changed by the user
+        order.setLines(linesTable.getItems());
 
-            order.calculateTotal();  // Calculate the total before saving
+        order.calculateTotal();  // Calculate the total before saving
 
-            if (!this.isModification) {
-                OrdersController.addOrder(order);
-            }
-
-            saveClicked = true;
-            dialogStage.close();
-        } else {
-            // Handle any warning to the user here
+        if (!this.isModification) {
+            OrdersController.addOrder(order);
         }
+
+        saveClicked = true;
+        dialogStage.close();
     }
 
     @FXML
@@ -221,10 +219,5 @@ public class OrderDialogViewController {
 
     public boolean isSaveClicked() {
         return saveClicked;
-    }
-
-    // TODO: check here if data fit to requirements
-    private boolean isInputValid() {
-        return true;
     }
 }

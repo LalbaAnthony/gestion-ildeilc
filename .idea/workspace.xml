@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dd49abc-7c93-472e-a355-b04324d5b4a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/InvoicesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/CustomersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderModifyDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryNotesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryPageNotesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/HomePageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/InvoicesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/InvoicesPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersPageViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/dialogs/OrderDialogViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryPageNotesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/DeliveryNotesViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/gestion_ildeilc/views/pages/OrdersPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/delivery-notes-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/home-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoices-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/invoices-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-modify-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-dialog-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-page-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-dialog-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/order-dialog-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/gestion_ildeilc/orders-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +99,7 @@
       <module name="gestion_ILDEILC" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.gestion_ildeilc.views.pages.*" />
+          <option name="PATTERN" value="app.gestion_ildeilc.views.pages.DeliveryNotesViewController" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
