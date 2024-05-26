@@ -28,7 +28,7 @@
 - [X] Check for classes diagrams
 - [-] Video of the app running
 - [-] Look for any warning in the code
-- [ ] Empty the line list on order creation
-- [ ] Click right and optimize import of all files
-- [ ] Merge branch dev & main
+- [-] Empty the line list on order creation
+- [X] Click right and optimize import of all files
+- [X] Merge branch dev & main
 
