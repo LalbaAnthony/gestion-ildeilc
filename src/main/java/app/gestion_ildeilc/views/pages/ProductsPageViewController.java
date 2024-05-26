@@ -1,12 +1,8 @@
 package app.gestion_ildeilc.views.pages;
 
 import app.gestion_ildeilc.controllers.ProductsController;
-import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Line;
-import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.views.dialogs.ProductDialogViewController;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -17,17 +13,15 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 
 public class ProductsPageViewController {
 

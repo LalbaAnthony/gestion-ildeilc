@@ -1,5 +1,7 @@
 package app.gestion_ildeilc.models;
 
+import app.gestion_ildeilc.controllers.DeliveryNotesController;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +31,19 @@ public class Order extends Transaction {
 
     public void setStatus(String status) {
         this.status = status;
+        // Create delivery note
+        if (("Received".equals(status) || "Sent".equals(status))) {
+            DeliveryNotesController.addDeliveryNote(new DeliveryNote(DeliveryNotesController.generateId(), getId(), LocalDate.now()));
+        }
+
+        // Check for stock
+        double calculatedTotal = 0.0;
+        for (Line line : getLines()) {
+            if (line.getProduct().getStock() == 0) {
+                this.status = "Pending";
+                break;
+            }
+        }
     }
 
     public void setDeliveryDate(LocalDate deliveryDate) {

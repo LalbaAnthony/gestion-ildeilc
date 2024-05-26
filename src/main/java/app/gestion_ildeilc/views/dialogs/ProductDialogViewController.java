@@ -1,19 +1,13 @@
 package app.gestion_ildeilc.views.dialogs;
 
-import app.gestion_ildeilc.controllers.CustomersController;
 import app.gestion_ildeilc.controllers.ProductsController;
-import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Line;
 import app.gestion_ildeilc.models.Product;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 
 public class ProductDialogViewController {
 

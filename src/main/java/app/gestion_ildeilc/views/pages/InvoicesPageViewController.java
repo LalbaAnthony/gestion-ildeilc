@@ -2,9 +2,7 @@ package app.gestion_ildeilc.views.pages;
 
 import app.gestion_ildeilc.controllers.InvoicesController;
 import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Line;
 import app.gestion_ildeilc.models.Invoice;
-import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.views.dialogs.InvoiceDialogViewController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
@@ -23,11 +21,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
+
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 
 public class InvoicesPageViewController {
 

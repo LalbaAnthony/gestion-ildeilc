@@ -1,11 +1,10 @@
 package app.gestion_ildeilc.controllers;
 
-import app.gestion_ildeilc.models.*;
+import app.gestion_ildeilc.models.DeliveryNote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class DeliveryNotesController {

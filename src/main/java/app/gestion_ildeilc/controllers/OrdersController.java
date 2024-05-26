@@ -1,15 +1,11 @@
 package app.gestion_ildeilc.controllers;
 
-import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Line;
-import app.gestion_ildeilc.models.Order;
-import app.gestion_ildeilc.models.Product;
-import app.gestion_ildeilc.models.Invoice;
+import app.gestion_ildeilc.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import app.gestion_ildeilc.controllers.InvoicesController;
-import java.util.ArrayList;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
