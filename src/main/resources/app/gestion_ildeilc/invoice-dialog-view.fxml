@@ -28,8 +28,8 @@
         <Label text="Customer:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
         <ComboBox fx:id="customerComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-        <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="statusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Paid ?:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="invoicePaidComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
         <Label text="Delivery Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
         <DatePicker fx:id="deliveryDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>

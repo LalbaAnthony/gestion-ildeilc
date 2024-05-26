@@ -85,10 +85,11 @@ public class OrdersController {
 
         Invoice invoice = new Invoice(
                 order.getId(),
-                order.getDescription(),
                 order.getCustomer(),
-                order.getDeliveryDate(),
+                order.getDescription(),
                 order.getTotal(),
+                order.getDeliveryDate(),
+                "Processing",
                 new ArrayList<>(order.getLines())
         );
 

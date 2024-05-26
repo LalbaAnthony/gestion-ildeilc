@@ -1,11 +1,11 @@
 package app.gestion_ildeilc.views.dialogs;
 
 import app.gestion_ildeilc.controllers.CustomersController;
-import app.gestion_ildeilc.controllers.OrdersController;
+import app.gestion_ildeilc.controllers.InvoicesController;
 import app.gestion_ildeilc.controllers.ProductsController;
 import app.gestion_ildeilc.models.Customer;
 import app.gestion_ildeilc.models.Line;
-import app.gestion_ildeilc.models.Order;
+import app.gestion_ildeilc.models.Invoice;
 import app.gestion_ildeilc.models.Product;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -17,7 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
-public class OrderDialogViewController {
+public class InvoiceDialogViewController {
 
     @FXML
     public Label pageTitle;
@@ -32,10 +32,10 @@ public class OrderDialogViewController {
     private ComboBox<Customer> customerComboBox;
 
     @FXML
-    private ComboBox<String> statusComboBox;
+    private ComboBox<String> paidComboBox;
 
     @FXML
-    private DatePicker deliveryDatePicker;
+    private DatePicker deliveredDatePicker;
 
     @FXML
     private Spinner<Double> totalSpinner;
@@ -52,13 +52,14 @@ public class OrderDialogViewController {
     public boolean isModification = true;
 
     private Stage dialogStage;
-    private Order order;
+    private Invoice invoice;
     private boolean saveClicked = false;
 
     @FXML
     private void initialize() {
         // Set values status select
-        statusComboBox.getItems().addAll("Pending", "Processing", "Completed", "Cancelled");
+        paidComboBox.getItems().addAll("Pending", "Processing", "Paid");
+
 
         // Initialize the Spinner for totalField
         SpinnerValueFactory<Double> totalValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, Double.MAX_VALUE, 0.0, 0.1);
@@ -126,9 +127,9 @@ public class OrderDialogViewController {
                 deleteButton.setOnAction(event -> {
                     Line line = getTableView().getItems().get(getIndex());
                     getTableView().getItems().remove(line);
-                    order.deleteLine(line); // Remove the line from the order
-                    order.calculateTotal(); // Recalculate the total
-                    totalSpinner.getValueFactory().setValue(order.getTotal()); // Update the spinner value
+                    invoice.deleteLine(line); // Remove the line from the invoice
+                    invoice.calculateTotal(); // Recalculate the total
+                    totalSpinner.getValueFactory().setValue(invoice.getTotal()); // Update the spinner value
                 });
             }
 
@@ -156,18 +157,18 @@ public class OrderDialogViewController {
         this.dialogStage = dialogStage;
     }
 
-    public void setOrder(Order order) {
+    public void setInvoice(Invoice invoice) {
 
-        this.order = order;
+        this.invoice = invoice;
 
-        // Set all field with the order data
-        idField.setText(String.valueOf(order.getId()));
-        descriptionField.setText(order.getDescription());
-        statusComboBox.setValue(order.getStatus());
-        customerComboBox.setValue(order.getCustomer());
-        deliveryDatePicker.setValue(order.getDeliveryDate());
-        totalSpinner.getValueFactory().setValue(order.getTotal());
-        linesTable.setItems(FXCollections.observableArrayList(order.getLines()));
+        // Set all field with the invoice data
+        idField.setText(String.valueOf(invoice.getId()));
+        descriptionField.setText(invoice.getDescription());
+        paidComboBox.setValue(invoice.getPaid());
+        customerComboBox.setValue(invoice.getCustomer());
+        deliveredDatePicker.setValue(invoice.getDeliveredDate());
+        totalSpinner.getValueFactory().setValue(invoice.getTotal());
+        linesTable.setItems(FXCollections.observableArrayList(invoice.getLines()));
 
     }
 
@@ -184,7 +185,7 @@ public class OrderDialogViewController {
         Line newLine = new Line(quantity, product); // Create Line object
 
         linesTable.getItems().add(newLine); // add the line to the table
-        order.addLine(newLine); // Add line to the actual order
+        invoice.addLine(newLine); // Add line to the actual invoice
 
         // Clear the input fields
         productComboBox.getSelectionModel().clearSelection();
@@ -194,18 +195,18 @@ public class OrderDialogViewController {
     @FXML
     private void handleSave() {
         // Set of all values, might be replaced in the future by a dedicated methode
-        // order.setId(idField.getText()); // No set cuz it cannot be changed by the user
-        order.setDescription(descriptionField.getText());
-        order.setStatus(statusComboBox.getValue());
-        order.setCustomer(customerComboBox.getValue());
-        order.setDeliveryDate(deliveryDatePicker.getValue());
-        // order.setTotal(totalSpinner.getValue()); // No set cuz it cannot be changed by the user
-        order.setLines(linesTable.getItems());
+        // invoice.setId(idField.getText()); // No set cuz it cannot be changed by the user
+        invoice.setDescription(descriptionField.getText());
+        invoice.setPaid(paidComboBox.getValue());
+        invoice.setCustomer(customerComboBox.getValue());
+        invoice.setDeliveredDate(deliveredDatePicker.getValue());
+        // invoice.setTotal(totalSpinner.getValue()); // No set cuz it cannot be changed by the user
+        invoice.setLines(linesTable.getItems());
 
-        order.calculateTotal();  // Calculate the total before saving
+        invoice.calculateTotal();  // Calculate the total before saving
 
         if (!this.isModification) {
-            OrdersController.addOrder(order);
+            InvoicesController.addInvoice(invoice);
         }
 
         saveClicked = true;

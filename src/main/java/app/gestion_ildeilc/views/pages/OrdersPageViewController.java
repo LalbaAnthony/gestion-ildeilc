@@ -89,7 +89,7 @@ public class OrdersPageViewController {
             }
         });
 
-        // Facture button column
+        // Invoice button column
         TableColumn<Order, Void> createInvoiceCol = new TableColumn<>(" ");
         createInvoiceCol.setCellFactory(param -> new TableCell<Order, Void>() {
             private final Button modifyButton = new Button("Create an invoice");
