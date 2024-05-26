@@ -1,5 +1,6 @@
 package app.gestion_ildeilc.views.dialogs;
 
+import app.gestion_ildeilc.views.pages.OrdersPageViewController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -8,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.collections.FXCollections;
+import app.gestion_ildeilc.controllers.OrdersController;
 import app.gestion_ildeilc.controllers.CustomersController;
 import app.gestion_ildeilc.controllers.ProductsController;
 import app.gestion_ildeilc.models.Order;
@@ -16,7 +18,10 @@ import app.gestion_ildeilc.models.Customer;
 import app.gestion_ildeilc.models.Line;
 import javafx.geometry.Pos;
 
-public class OrderModifyDialogViewController {
+public class OrderDialogViewController {
+
+    @FXML
+    public Label pageTitle;
 
     @FXML
     private TextField idField;
@@ -44,6 +49,8 @@ public class OrderModifyDialogViewController {
 
     @FXML
     private Spinner<Integer> quantitySpinner;
+
+    public boolean isModification = true;
 
     private Stage dialogStage;
     private Order order;
@@ -148,6 +155,7 @@ public class OrderModifyDialogViewController {
     }
 
     public void setOrder(Order order) {
+
         this.order = order;
 
         // Set all field with the order data
@@ -158,10 +166,7 @@ public class OrderModifyDialogViewController {
         deliveryDatePicker.setValue(order.getDeliveryDate());
         totalSpinner.getValueFactory().setValue(order.getTotal());
         linesTable.setItems(FXCollections.observableArrayList(order.getLines()));
-    }
 
-    public boolean isSaveClicked() {
-        return saveClicked;
     }
 
     @FXML
@@ -198,8 +203,14 @@ public class OrderModifyDialogViewController {
 
             order.calculateTotal();  // Calculate the total before saving
 
+            if (!this.isModification) {
+                OrdersController.addOrder(order);
+            }
+
             saveClicked = true;
             dialogStage.close();
+        } else {
+            // Handle any warning to the user here
         }
     }
 
@@ -208,6 +219,11 @@ public class OrderModifyDialogViewController {
         dialogStage.close();
     }
 
+    public boolean isSaveClicked() {
+        return saveClicked;
+    }
+
+    // TODO: check here if data fit to requirements
     private boolean isInputValid() {
         return true;
     }

@@ -1,13 +1,13 @@
 package app.gestion_ildeilc.controllers;
 
-import app.gestion_ildeilc.models.Order;
 import app.gestion_ildeilc.models.Customer;
-import app.gestion_ildeilc.models.Product;
 import app.gestion_ildeilc.models.Line;
-
+import app.gestion_ildeilc.models.Order;
+import app.gestion_ildeilc.models.Product;  
 import java.time.LocalDate;
-import java.util.Objects;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class OrdersController {
 
@@ -43,6 +43,27 @@ public class OrdersController {
             }
         }
         return false;
+    }
+
+    // Generate a unique ID
+    public static String generateId() {
+        int maxId = 0;
+        for (Order order : orders) {
+            int id = Integer.parseInt(order.getId());
+            if (id > maxId) {
+                maxId = id;
+            }
+        }
+        return String.valueOf(maxId + 1);
+    }
+
+
+    // Add a new order
+    public static void addOrder(Order newOrder) {
+        // Add the new order to the orders array
+        List<Order> ordersList = new ArrayList<>(Arrays.asList(orders));
+        ordersList.add(newOrder);
+        orders = ordersList.toArray(new Order[0]);
     }
 
 }

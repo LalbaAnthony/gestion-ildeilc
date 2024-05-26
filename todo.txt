@@ -1,21 +1,22 @@
 - [X] Delete template files
+- [X] Order: add children items modification
+- [X] Order: add id
+- [X] Fix visuals issues dialog
+- [X] Change size of dialog and make an extends
+- [X] Make ID a string
+- [X] Use a spinner for total
+- [X] Clean the order code before adding new shit
+- [X] Add line to orders
+- [ ] Make order creation
+- [X] Replace all client in order modification field by actual data
+- [ ] Center data in cols
+- [ ] Duplicate order for others data type
+- [ ] Make functions to transfer order to invoices etc.
 - [ ] Views
-    - [X] Order: add children items modification
-    - [X] Order: add id
-    - [X] Fix visuals issues dialog
-    - [X] Change size of dialog and make an extends
-    - [X] Make ID a string
-    - [X] Use a spinner for total
-    - [ ] Clean the order code before adding new shit
-    - [X] Add line to orders
-    - [ ] Make order creation
-    - [X] Replace all client in order modification field by actual data
-    - [ ] Center data in cols
-    - [ ] Duplicate order for others data type
-    - [ ] Make functions to transfer order to invoices etc.
 - [ ] Controllers
 - [ ] Models
 - [ ] Fill the project with sample data to make the project easier to test
+- [ ] Click right and optimize import of all files
 - [ ] Last specifications check
 - [ ] Java doc
 - [ ] Units tests

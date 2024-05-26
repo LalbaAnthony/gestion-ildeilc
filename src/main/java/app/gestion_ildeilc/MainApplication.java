@@ -31,7 +31,7 @@ public class MainApplication extends Application {
         Button btnClose = new Button("Close app"); // Button to close the app
 
         // Add action to change the view using the buttons
-        btnOrders.setOnAction(e -> switchView("orders-view.fxml"));
+        btnOrders.setOnAction(e -> switchView("orders-page-view.fxml"));
         btnDeliveryNotes.setOnAction(e -> switchView("delivery-notes-view.fxml"));
         btnInvoices.setOnAction(e -> switchView("invoices-view.fxml"));
         btnClose.setOnAction(e -> stage.close()); // Action to close the app when clicked

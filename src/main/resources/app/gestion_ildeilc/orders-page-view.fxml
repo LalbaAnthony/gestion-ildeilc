@@ -2,18 +2,23 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="app.gestion_ildeilc.views.pages.OrdersViewController">
+      fx:controller="app.gestion_ildeilc.views.pages.OrdersPageViewController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
     <Label text="List of orders"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Add order" style="-fx-background-color: #485ea8; -fx-text-fill: white; -fx-font-weight: bold;"
+                onAction="#showOrderDialogCreation"/>
+    </HBox>
 
     <!-- Define TableView -->
     <TableView fx:id="ordersTable">
