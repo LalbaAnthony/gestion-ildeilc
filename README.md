@@ -14,6 +14,5 @@ Application de gestion de stock pour l'entreprise ILDEILC, developpé dans la ca
 **Clonez le dépôt :**
 
 ```bash
-git clone https://github.com/yourusername/gestion_ildeilc.git
-cd gestion_ildeilc
+git clone git@github.com:LalbaAnthony/gestion_ILDEILC.git && cd gestion_ILDEILC
 ```
